@@ -1,0 +1,18 @@
+{
+  "date": "2025-12-25",
+  "start_time": "2025-12-25T23:55:58.781606",
+  "stages": {
+    "collect": {
+      "status": "done",
+      "count": 148
+    },
+    "extract_content": {
+      "status": "done"
+    }
+  },
+  "reports": {},
+  "success": false,
+  "error": "['Traceback (most recent call last):\\n', '  File \"/Users/mx/Desktop/news_aggregator/main.py\", line 636, in run\\n    self.classify_items()\\n', '  File \"/Users/mx/Desktop/news_aggregator/main.py\", line 385, in classify_items\\n    classifier = self._get_classifier()\\n                 ^^^^^^^^^^^^^^^^^^^^^^\\n', '  File \"/Users/mx/Desktop/news_aggregator/main.py\", line 170, in _get_classifier\\n    self._classifier = create_classifier()\\n                       ^^^^^^^^^^^^^^^^^^^\\n', '  File \"/Users/mx/Desktop/news_aggregator/analyzers/classifier.py\", line 648, in create_classifier\\n    return ContentClassifier(\\n           ^^^^^^^^^^^^^^^^^^\\n', '  File \"/Users/mx/Desktop/news_aggregator/analyzers/classifier.py\", line 211, in __init__\\n    self._system_prompt = self._build_system_prompt()\\n                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n', '  File \"/Users/mx/Desktop/news_aggregator/analyzers/classifier.py\", line 236, in _build_system_prompt\\n    return prompt_template.format(categories=categories_text)\\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n', \"KeyError: 'title'\\n\"]",
+  "end_time": "2025-12-25T23:57:08.338556",
+  "duration_seconds": 69.55695
+}

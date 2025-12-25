@@ -1,0 +1,54 @@
+2025-12-26 00:09:23.863 | INFO     | __main__:__init__:144 - NewsAggregatorPipeline 初始化完成
+2025-12-26 00:09:23.863 | INFO     | __main__:run:599 - ============================================================
+2025-12-26 00:09:23.864 | INFO     | __main__:run:600 - 新闻聚合分析流水线启动 - 2025-12-26
+2025-12-26 00:09:23.864 | INFO     | __main__:run:601 - ============================================================
+2025-12-26 00:09:23.864 | INFO     | __main__:collect_data:198 - ==================================================
+2025-12-26 00:09:23.864 | INFO     | __main__:collect_data:199 - 开始数据采集阶段
+2025-12-26 00:09:23.864 | INFO     | __main__:collect_data:200 - ==================================================
+2025-12-26 00:09:23.864 | INFO     | __main__:collect_data:207 - 采集 HackerNews...
+2025-12-26 00:09:23.864 | INFO     | collectors.hackernews_collector:fetch_top_stories:423 - 获取 HN 热门故事 (limit=30)
+2025-12-26 00:09:57.968 | INFO     | collectors.hackernews_collector:fetch_stories:189 - 成功获取 30/30 个故事
+2025-12-26 00:09:57.968 | INFO     | __main__:collect_data:225 - HackerNews: 采集 30 条
+2025-12-26 00:09:57.968 | INFO     | __main__:collect_data:233 - 采集 RSS订阅...
+2025-12-26 00:09:57.969 | WARNING  | collectors.rss_collector:fetch_all:271 - 没有启用的 RSS 源
+2025-12-26 00:09:57.969 | INFO     | __main__:collect_data:250 - RSS: 采集 0 条
+2025-12-26 00:09:57.969 | INFO     | __main__:collect_data:258 - 采集 新浪财经直播...
+2025-12-26 00:09:57.970 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 7x24财经
+2025-12-26 00:09:57.970 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 7x24财经, 页码: 1
+2025-12-26 00:09:58.129 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 7x24财经 获取 20 条内容
+2025-12-26 00:09:58.634 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 7x24财经, 页码: 2
+2025-12-26 00:09:58.728 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 7x24财经 获取 20 条内容
+2025-12-26 00:09:59.234 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 期货直播
+2025-12-26 00:09:59.235 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 期货直播, 页码: 1
+2025-12-26 00:09:59.386 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 期货直播 获取 11 条内容
+2025-12-26 00:09:59.891 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 期货直播, 页码: 2
+2025-12-26 00:10:00.004 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 期货直播 获取 11 条内容
+2025-12-26 00:10:00.511 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 外汇直播
+2025-12-26 00:10:00.514 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 外汇直播, 页码: 1
+2025-12-26 00:10:00.696 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 外汇直播 获取 0 条内容
+2025-12-26 00:10:01.202 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 美股直播
+2025-12-26 00:10:01.202 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 美股直播, 页码: 1
+2025-12-26 00:10:01.365 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 美股直播 获取 1 条内容
+2025-12-26 00:10:01.868 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 美股直播, 页码: 2
+2025-12-26 00:10:02.057 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 美股直播 获取 1 条内容
+2025-12-26 00:10:02.561 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 港股直播
+2025-12-26 00:10:02.561 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 港股直播, 页码: 1
+2025-12-26 00:10:02.872 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 港股直播 获取 13 条内容
+2025-12-26 00:10:03.377 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 港股直播, 页码: 2
+2025-12-26 00:10:03.526 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 港股直播 获取 13 条内容
+2025-12-26 00:10:04.032 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 债券直播
+2025-12-26 00:10:04.032 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 债券直播, 页码: 1
+2025-12-26 00:10:04.195 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 债券直播 获取 14 条内容
+2025-12-26 00:10:04.702 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 债券直播, 页码: 2
+2025-12-26 00:10:04.886 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 债券直播 获取 14 条内容
+2025-12-26 00:10:05.391 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 基金直播
+2025-12-26 00:10:05.391 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 基金直播, 页码: 1
+2025-12-26 00:10:05.503 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 基金直播 获取 0 条内容
+2025-12-26 00:10:06.008 | INFO     | __main__:collect_data:276 - 新浪财经: 采集 148 条
+2025-12-26 00:10:06.010 | INFO     | __main__:collect_data:282 - 数据采集完成, 总计: 148 条
+2025-12-26 00:10:06.024 | DEBUG    | utils.file_utils:save_json:757 - JSON已保存: cache/2025-12-26_raw_items.json
+2025-12-26 00:10:06.024 | INFO     | __main__:collect_data:288 - 原始数据已缓存: cache/2025-12-26_raw_items.json
+2025-12-26 00:10:06.024 | INFO     | __main__:extract_content:314 - ==================================================
+2025-12-26 00:10:06.024 | INFO     | __main__:extract_content:315 - 开始内容抽取阶段
+2025-12-26 00:10:06.024 | INFO     | __main__:extract_content:316 - ==================================================
+2025-12-26 00:10:06.025 | INFO     | __main__:extract_content:331 - 需要抽取全文: 62 条
