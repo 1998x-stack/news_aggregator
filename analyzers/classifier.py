@@ -40,7 +40,7 @@ from config.settings import (
     IMPORTANCE_PENALTY_KEYWORDS,
     OllamaModelConfig
 )
-from prompts.llm_prompts import get_prompt, PromptType
+from prompts.llm_prompts import get_prompt, PromptType, get_prompt_template
 
 
 @dataclass
@@ -117,7 +117,7 @@ class RuleBasedClassifier:
         Returns:
             Tuple[category, matched_keywords]: 分类结果和匹配的关键词
         """
-        text = f"{item.title} {item.summary or ''} {item.content or ''}".lower()
+        text = f"{item.get('title')} {item.get('summary') or ''} {item.get('content') or ''}".lower() if isinstance(item, dict) else f"{item.title} {item.summary or ''} {item.content or ''}".lower()
         
         category_scores: Dict[ContentCategory, int] = {}
         matched_keywords: Dict[ContentCategory, List[str]] = {}
@@ -152,7 +152,7 @@ class RuleBasedClassifier:
         Returns:
             int: 调整后的重要性分数（1-5）
         """
-        text = f"{item.title} {item.summary or ''}".lower()
+        text = f"{item.get('title')} {item.get('summary') or ''}".lower() if isinstance(item, dict) else f"{item.title} {item.summary or ''}".lower()
         importance = base_importance
         
         # 提升词加分
@@ -362,7 +362,7 @@ class ContentClassifier:
         start_time = datetime.now()
         
         # 检查缓存
-        cache_key = item.get_hash()
+        cache_key = item.get('id', hash(str(item))) if isinstance(item, dict) else item.get_hash()
         if self.cache_enabled and cache_key in self._cache:
             logger.debug(f"缓存命中: {cache_key}")
             return self._cache[cache_key]
@@ -394,7 +394,7 @@ class ContentClassifier:
         try:
             prompt = f"""请分析以下内容并进行分类：
 
-{item.to_prompt_text()}
+{item}
 
 请以JSON格式返回结果，包含以下字段：
 - category: 分类（从以下选择：{', '.join([c.value for c in ContentCategory])}）

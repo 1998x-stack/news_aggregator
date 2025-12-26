@@ -387,8 +387,8 @@ class NewsAggregatorPipeline:
         # 批量分类
         results = classifier.classify_batch(
             items,
-            max_workers=3,
-            show_progress=True
+            # max_workers=3,
+            # show_progress=True
         )
         
         # 更新条目

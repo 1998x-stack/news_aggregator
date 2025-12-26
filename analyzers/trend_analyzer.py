@@ -446,7 +446,7 @@ class TrendAnalyzer:
                     "source": article.get("source", ""),
                     "time": article.get("publish_time", ""),
                     "category": str(article.get("category", "other")),
-                    "importance": str(importance)
+                    "importance": int(importance)
                 }
                 key_events.append(event)
         

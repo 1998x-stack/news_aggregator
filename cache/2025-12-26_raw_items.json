@@ -1,14 +1,14 @@
 [
   {
-    "id": "hn_46384167",
+    "id": "hn_46384781",
     "source": "HackerNews",
-    "title": "Python 3.15’s interpreter for Windows x86-64 should hopefully be 15% faster",
-    "url": "https://fidget-spinner.github.io/posts/no-longer-sorry.html",
+    "title": "Salesforce regrets firing 4000 experienced staff and replacing them with AI",
+    "url": "https://maarthandam.com/2025/12/25/salesforce-regrets-firing-4000-staff-ai/",
     "content": "",
-    "author": "lumpa",
-    "score": 116,
-    "publish_time": "2025-12-25T21:02:46",
-    "comments_count": 25
+    "author": "whynotmaybe",
+    "score": 97,
+    "publish_time": "2025-12-25T22:58:29",
+    "comments_count": 48
   },
   {
     "id": "hn_46381620",
@@ -17,75 +17,9 @@
     "url": "https://archive.blankline.org/api/media/file/d3_engine_public_release%20(1)-1.pdf",
     "content": "Found this on an open directory (blankline.org).<p>It describes a &#x27;Recursive Swarm&#x27; architecture designed to solve context saturation for 24+ hour engineering tasks.<p>Two key claims stood out to me:<p>D3 Engine: Separates &#x27;Active Workspace&#x27; from &#x27;Latent History&#x27; to reduce compute costs by 99% (uses &#x27;Trajectory Vectors&#x27; instead of token caching).<p>Horizon Mode: Uses a swarm of 10,000 agents to explore solution paths instead of linear prediction.<p>The &#x27;Horizon Mode&#x27; paper is also in the same directory: <a href=\"https:&#x2F;&#x2F;archive.blankline.org&#x2F;api&#x2F;media&#x2F;file&#x2F;horizon_mode_public_release%20(1).pdf\" rel=\"nofollow\">https:&#x2F;&#x2F;archive.blankline.org&#x2F;api&#x2F;media&#x2F;file&#x2F;horizon_mode_pu...</a><p>Curious if anyone has seen the &#x27;Flash-Gated Consensus&#x27; protocol used in production before?",
     "author": "epicprogrammer",
-    "score": 15,
+    "score": 17,
     "publish_time": "2025-12-25T10:47:48",
     "comments_count": 2
-  },
-  {
-    "id": "hn_46380075",
-    "source": "HackerNews",
-    "title": "Phoenix: A modern X server written from scratch in Zig",
-    "url": "https://git.dec05eba.com/phoenix/about/",
-    "content": "",
-    "author": "snvzz",
-    "score": 537,
-    "publish_time": "2025-12-25T06:43:53",
-    "comments_count": 289
-  },
-  {
-    "id": "hn_46380168",
-    "source": "HackerNews",
-    "title": "Tell HN: Merry Christmas",
-    "url": null,
-    "content": "Different cultures celebrate Christmas at different days and time zones are a thing. But it&#x27;s Christmas here, so:<p>Merry Christmas to everyone. I hope you get some rest and can spend time with people who are dear to you and get to focus on what&#x27;s important rather than getting lost in stressing about everything having to be perfect.<p>Also much love to everyone who cannot spend their Christmas with dear people.<p>To make sure this post meets the relevancy criteria, here is a Wikipedia article about some Christmas (more precisely advent) tradition which I personally really like: <a href=\"https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Christmas_market\" rel=\"nofollow\">https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Christmas_market</a>",
-    "author": "basilikum",
-    "score": 1579,
-    "publish_time": "2025-12-25T06:56:00",
-    "comments_count": 362
-  },
-  {
-    "id": "hn_46383552",
-    "source": "HackerNews",
-    "title": "We invited a man into our home at Christmas and he stayed with us for 45 years",
-    "url": "https://www.bbc.co.uk/news/articles/cdxwllqz1l0o",
-    "content": "",
-    "author": "rajeshrajappan",
-    "score": 487,
-    "publish_time": "2025-12-25T18:35:34",
-    "comments_count": 101
-  },
-  {
-    "id": "hn_46384781",
-    "source": "HackerNews",
-    "title": "Salesforce regrets firing 4000 experienced staff and replacing them with AI",
-    "url": "https://maarthandam.com/2025/12/25/salesforce-regrets-firing-4000-staff-ai/",
-    "content": "",
-    "author": "whynotmaybe",
-    "score": 8,
-    "publish_time": "2025-12-25T22:58:29",
-    "comments_count": 4
-  },
-  {
-    "id": "hn_46319382",
-    "source": "HackerNews",
-    "title": "The First Photographs of Snowflakes Discover the Groundbreaking Microphotography",
-    "url": "https://www.openculture.com/2017/12/the-first-photographs-of-snowflakes.html",
-    "content": "",
-    "author": "_____k",
-    "score": 52,
-    "publish_time": "2025-12-19T05:58:50",
-    "comments_count": 7
-  },
-  {
-    "id": "hn_46380758",
-    "source": "HackerNews",
-    "title": "Who Watches the Waymos? I do [video]",
-    "url": "https://www.youtube.com/watch?v=oYU2hAbx_Fc",
-    "content": "<a href=\"https:&#x2F;&#x2F;x.com&#x2F;fulligin&#x2F;status&#x2F;2003925653113184498\" rel=\"nofollow\">https:&#x2F;&#x2F;x.com&#x2F;fulligin&#x2F;status&#x2F;2003925653113184498</a><p><a href=\"https:&#x2F;&#x2F;xcancel.com&#x2F;fulligin&#x2F;status&#x2F;2003925653113184498\" rel=\"nofollow\">https:&#x2F;&#x2F;xcancel.com&#x2F;fulligin&#x2F;status&#x2F;2003925653113184498</a>",
-    "author": "notgloating",
-    "score": 217,
-    "publish_time": "2025-12-25T08:10:12",
-    "comments_count": 72
   },
   {
     "id": "hn_46336577",
@@ -94,42 +28,31 @@
     "url": "https://www.newyorker.com/news/press-room/the-entire-new-yorker-archive-is-now-fully-digitized",
     "content": "",
     "author": "thm",
-    "score": 74,
+    "score": 88,
     "publish_time": "2025-12-20T22:49:39",
-    "comments_count": 7
+    "comments_count": 13
   },
   {
-    "id": "hn_46315658",
+    "id": "hn_46384919",
     "source": "HackerNews",
-    "title": "Ask HN: How do I bridge the gap between PhD and SWE experiences?",
-    "url": null,
-    "content": "After finishing my PhD in earth sciences, I pivoted to software engineering. I’ve spent the last 8 years as a full-stack developer, gaining a decent grasp of various stacks and frameworks.<p>I’m now at a point where I want to merge my scientific background with my engineering experience. However, I’m finding a &quot;missing middle&quot; in the job market. I don&#x27;t ever see a position that requires and values deep expertise in both.<p>I enjoy development, but I feel like my scientific training is going to waste. For those who have successfully merged these two paths:<p>Did you find a &quot;unicorn&quot; role, or did you create one within a company?<p>How do you market yourself when your two halves feel like they belong to different resumes?",
-    "author": "ecophyseis",
-    "score": 25,
-    "publish_time": "2025-12-19T01:20:23",
-    "comments_count": 19
-  },
-  {
-    "id": "hn_46383233",
-    "source": "HackerNews",
-    "title": "Quantum Error Correction Goes FOOM",
-    "url": "https://algassert.com/post/2503",
+    "title": "Alzheimer's can be reversed to achieve full neurological recovery in animals",
+    "url": "https://case.edu/news/new-study-shows-alzheimers-disease-can-be-reversed-achieve-full-neurological-recovery-not-just-prevented-or-slowed-animal-models",
     "content": "",
-    "author": "EvgeniyZh",
-    "score": 37,
-    "publish_time": "2025-12-25T17:18:15",
-    "comments_count": 8
+    "author": "thunderbong",
+    "score": 108,
+    "publish_time": "2025-12-25T23:22:36",
+    "comments_count": 11
   },
   {
-    "id": "hn_46383139",
+    "id": "hn_46383552",
     "source": "HackerNews",
-    "title": "Self-referencing Page Tables for the x86-Architecture",
-    "url": "https://0l.de/blog/2015/01/bachelor-thesis-abstract/",
+    "title": "We invited a man into our home at Christmas and he stayed with us for 45 years",
+    "url": "https://www.bbc.co.uk/news/articles/cdxwllqz1l0o",
     "content": "",
-    "author": "stv0g",
-    "score": 38,
-    "publish_time": "2025-12-25T16:58:23",
-    "comments_count": 8
+    "author": "rajeshrajappan",
+    "score": 521,
+    "publish_time": "2025-12-25T18:35:34",
+    "comments_count": 114
   },
   {
     "id": "hn_46315583",
@@ -138,9 +61,53 @@
     "url": "https://joannabregan.substack.com/p/toys-with-the-highest-play-time-and",
     "content": "",
     "author": "surprisetalk",
-    "score": 30,
+    "score": 46,
     "publish_time": "2025-12-19T01:14:50",
+    "comments_count": 19
+  },
+  {
+    "id": "hn_46338788",
+    "source": "HackerNews",
+    "title": "Rare look inside the secret Lego Museum",
+    "url": "https://www.cbsnews.com/news/lego-secret-museum-denmark-headquarters/",
+    "content": "",
+    "author": "mhb",
+    "score": 3,
+    "publish_time": "2025-12-21T03:23:18",
+    "comments_count": 0
+  },
+  {
+    "id": "hn_46384167",
+    "source": "HackerNews",
+    "title": "Python 3.15’s interpreter for Windows x86-64 should hopefully be 15% faster",
+    "url": "https://fidget-spinner.github.io/posts/no-longer-sorry.html",
+    "content": "",
+    "author": "lumpa",
+    "score": 133,
+    "publish_time": "2025-12-25T21:02:46",
+    "comments_count": 33
+  },
+  {
+    "id": "hn_46319382",
+    "source": "HackerNews",
+    "title": "The First Photographs of Snowflakes Discover the Groundbreaking Microphotography",
+    "url": "https://www.openculture.com/2017/12/the-first-photographs-of-snowflakes.html",
+    "content": "",
+    "author": "_____k",
+    "score": 57,
+    "publish_time": "2025-12-19T05:58:50",
     "comments_count": 7
+  },
+  {
+    "id": "hn_46380075",
+    "source": "HackerNews",
+    "title": "Phoenix: A modern X server written from scratch in Zig",
+    "url": "https://git.dec05eba.com/phoenix/about/",
+    "content": "",
+    "author": "snvzz",
+    "score": 541,
+    "publish_time": "2025-12-25T06:43:53",
+    "comments_count": 294
   },
   {
     "id": "hn_46383675",
@@ -149,9 +116,20 @@
     "url": "https://github.com/mattermost/mattermost/issues/34271",
     "content": "",
     "author": "xvilka",
-    "score": 228,
+    "score": 241,
     "publish_time": "2025-12-25T19:03:59",
-    "comments_count": 118
+    "comments_count": 122
+  },
+  {
+    "id": "hn_46315658",
+    "source": "HackerNews",
+    "title": "Ask HN: How do I bridge the gap between PhD and SWE experiences?",
+    "url": null,
+    "content": "After finishing my PhD in earth sciences, I pivoted to software engineering. I’ve spent the last 8 years as a full-stack developer, gaining a decent grasp of various stacks and frameworks.<p>I’m now at a point where I want to merge my scientific background with my engineering experience. However, I’m finding a &quot;missing middle&quot; in the job market. I don&#x27;t ever see a position that requires and values deep expertise in both.<p>I enjoy development, but I feel like my scientific training is going to waste. For those who have successfully merged these two paths:<p>Did you find a &quot;unicorn&quot; role, or did you create one within a company?<p>How do you market yourself when your two halves feel like they belong to different resumes?",
+    "author": "ecophyseis",
+    "score": 33,
+    "publish_time": "2025-12-19T01:20:23",
+    "comments_count": 24
   },
   {
     "id": "hn_46382011",
@@ -160,9 +138,20 @@
     "url": "https://www.ruby-lang.org/en/news/2025/12/25/ruby-4-0-0-released/",
     "content": "",
     "author": "FBISurveillance",
-    "score": 509,
+    "score": 524,
     "publish_time": "2025-12-25T12:13:00",
-    "comments_count": 92
+    "comments_count": 97
+  },
+  {
+    "id": "hn_46383233",
+    "source": "HackerNews",
+    "title": "Quantum Error Correction Goes FOOM",
+    "url": "https://algassert.com/post/2503",
+    "content": "",
+    "author": "EvgeniyZh",
+    "score": 40,
+    "publish_time": "2025-12-25T17:18:15",
+    "comments_count": 9
   },
   {
     "id": "hn_46377862",
@@ -171,7 +160,7 @@
     "url": "https://www.ipaidia.gr/wp-content/uploads/2020/12/117-2020-fabrice-bellard.pdf",
     "content": "",
     "author": "lioeters",
-    "score": 312,
+    "score": 316,
     "publish_time": "2025-12-25T02:17:47",
     "comments_count": 95
   },
@@ -182,20 +171,31 @@
     "url": "https://github.com/antonmedv/textarea",
     "content": "I wanted to see how far I could go building a notes app using only what modern browsers already provide – no frameworks, no storage APIs, no build step.<p>What it does:<p>Single HTML file, no deps, 111 loc<p>Notes live in the URL hash (shareable links!)<p>Auto-compressed with CompressionStream<p>Plain-text editor (contenteditable)<p>History support<p>Page title from first # heading<p>Respects light&#x2F;dark mode<p>No storage, cookies, or tracking<p>The entire app is the page source.<p><a href=\"https:&#x2F;&#x2F;textarea.my&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;textarea.my&#x2F;</a>",
     "author": "medv",
-    "score": 384,
+    "score": 387,
     "publish_time": "2025-12-25T03:42:25",
-    "comments_count": 131
+    "comments_count": 134
   },
   {
-    "id": "hn_46380399",
+    "id": "hn_46380758",
     "source": "HackerNews",
-    "title": "Asterisk AI Voice Agent",
-    "url": "https://github.com/hkjarral/Asterisk-AI-Voice-Agent",
+    "title": "Who Watches the Waymos? I do [video]",
+    "url": "https://www.youtube.com/watch?v=oYU2hAbx_Fc",
+    "content": "<a href=\"https:&#x2F;&#x2F;x.com&#x2F;fulligin&#x2F;status&#x2F;2003925653113184498\" rel=\"nofollow\">https:&#x2F;&#x2F;x.com&#x2F;fulligin&#x2F;status&#x2F;2003925653113184498</a><p><a href=\"https:&#x2F;&#x2F;xcancel.com&#x2F;fulligin&#x2F;status&#x2F;2003925653113184498\" rel=\"nofollow\">https:&#x2F;&#x2F;xcancel.com&#x2F;fulligin&#x2F;status&#x2F;2003925653113184498</a>",
+    "author": "notgloating",
+    "score": 220,
+    "publish_time": "2025-12-25T08:10:12",
+    "comments_count": 75
+  },
+  {
+    "id": "hn_46383139",
+    "source": "HackerNews",
+    "title": "Self-referencing Page Tables for the x86-Architecture",
+    "url": "https://0l.de/blog/2015/01/bachelor-thesis-abstract/",
     "content": "",
-    "author": "akrulino",
-    "score": 150,
-    "publish_time": "2025-12-25T07:25:37",
-    "comments_count": 77
+    "author": "stv0g",
+    "score": 40,
+    "publish_time": "2025-12-25T16:58:23",
+    "comments_count": 8
   },
   {
     "id": "hn_46336364",
@@ -204,9 +204,20 @@
     "url": "https://possiblywrong.wordpress.com/2020/12/10/the-fisher-yates-shuffle-is-backward/",
     "content": "",
     "author": "possiblywrong",
-    "score": 40,
+    "score": 45,
     "publish_time": "2025-12-20T22:17:13",
-    "comments_count": 12
+    "comments_count": 13
+  },
+  {
+    "id": "hn_46380399",
+    "source": "HackerNews",
+    "title": "Asterisk AI Voice Agent",
+    "url": "https://github.com/hkjarral/Asterisk-AI-Voice-Agent",
+    "content": "",
+    "author": "akrulino",
+    "score": 156,
+    "publish_time": "2025-12-25T07:25:37",
+    "comments_count": 79
   },
   {
     "id": "hn_46351666",
@@ -215,31 +226,20 @@
     "url": "https://blog.miguelgrinberg.com/post/csrf-protection-without-tokens-or-hidden-form-fields",
     "content": "",
     "author": "adevilinyc",
-    "score": 252,
+    "score": 255,
     "publish_time": "2025-12-22T13:38:33",
     "comments_count": 90
   },
   {
-    "id": "hn_46367224",
+    "id": "hn_46380168",
     "source": "HackerNews",
-    "title": "Fabrice Bellard Releases MicroQuickJS",
-    "url": "https://github.com/bellard/mquickjs/blob/main/README.md",
-    "content": "",
-    "author": "Aissen",
-    "score": 1410,
-    "publish_time": "2025-12-24T01:33:42",
-    "comments_count": 529
-  },
-  {
-    "id": "hn_46377597",
-    "source": "HackerNews",
-    "title": "Show HN: Vibium – Browser automation for AI and humans, by Selenium's creator",
-    "url": "https://github.com/VibiumDev/vibium",
-    "content": "i started the selenium project 21 years ago. vibium is what i&#x27;d build if i started over today with ai agents in mind.\ngo binary under the hood (handles browser, bidi, mcp) but devs never see it. just npm install vibium. python&#x2F;java coming.\nfor claude code: claude mcp add vibium -- npx -y vibium\nv1 ships today. ama.",
-    "author": "hugs",
-    "score": 361,
-    "publish_time": "2025-12-25T01:49:02",
-    "comments_count": 103
+    "title": "Tell HN: Merry Christmas",
+    "url": null,
+    "content": "Different cultures celebrate Christmas at different days and time zones are a thing. But it&#x27;s Christmas here, so:<p>Merry Christmas to everyone. I hope you get some rest and can spend time with people who are dear to you and get to focus on what&#x27;s important rather than getting lost in stressing about everything having to be perfect.<p>Also much love to everyone who cannot spend their Christmas with dear people.<p>To make sure this post meets the relevancy criteria, here is a Wikipedia article about some Christmas (more precisely advent) tradition which I personally really like: <a href=\"https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Christmas_market\" rel=\"nofollow\">https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Christmas_market</a>",
+    "author": "basilikum",
+    "score": 1601,
+    "publish_time": "2025-12-25T06:56:00",
+    "comments_count": 364
   },
   {
     "id": "hn_46322815",
@@ -248,64 +248,31 @@
     "url": "https://news.mcmaster.ca/mcmaster-research-team-digitizes-more-than-100-years-of-canadian-infectious-disease-data/",
     "content": "",
     "author": "XzetaU8",
-    "score": 138,
+    "score": 139,
     "publish_time": "2025-12-19T14:24:52",
     "comments_count": 6
   },
   {
-    "id": "hn_46327191",
+    "id": "hn_46377597",
     "source": "HackerNews",
-    "title": "Show HN: Exploring Mathematics with Python",
-    "url": "https://coe.psu.ac.th/ad/explore/",
-    "content": "",
-    "author": "Andrew2565",
-    "score": 175,
-    "publish_time": "2025-12-19T23:55:30",
-    "comments_count": 17
+    "title": "Show HN: Vibium – Browser automation for AI and humans, by Selenium's creator",
+    "url": "https://github.com/VibiumDev/vibium",
+    "content": "i started the selenium project 21 years ago. vibium is what i&#x27;d build if i started over today with ai agents in mind.\ngo binary under the hood (handles browser, bidi, mcp) but devs never see it. just npm install vibium. python&#x2F;java coming.\nfor claude code: claude mcp add vibium -- npx -y vibium\nv1 ships today. ama.",
+    "author": "hugs",
+    "score": 363,
+    "publish_time": "2025-12-25T01:49:02",
+    "comments_count": 103
   },
   {
-    "id": "hn_46346026",
+    "id": "hn_46367224",
     "source": "HackerNews",
-    "title": "Using Vectorize to build an unreasonably good search engine in 160 lines of code",
-    "url": "https://blog.partykit.io/posts/using-vectorize-to-build-search/",
+    "title": "Fabrice Bellard Releases MicroQuickJS",
+    "url": "https://github.com/bellard/mquickjs/blob/main/README.md",
     "content": "",
-    "author": "ColinWright",
-    "score": 100,
-    "publish_time": "2025-12-22T00:36:25",
-    "comments_count": 29
-  },
-  {
-    "id": "hn_46339532",
-    "source": "HackerNews",
-    "title": "Comptime – C# meta-programming with compile-time code generation and evaluation",
-    "url": "https://github.com/sebastienros/comptime",
-    "content": "",
-    "author": "bj-rn",
-    "score": 118,
-    "publish_time": "2025-12-21T04:49:52",
-    "comments_count": 51
-  },
-  {
-    "id": "hn_46348971",
-    "source": "HackerNews",
-    "title": "Handheld PC Community Forums",
-    "url": "https://www.hpcfactor.com/forums/category-view.asp",
-    "content": "",
-    "author": "walterbell",
-    "score": 37,
-    "publish_time": "2025-12-22T05:59:21",
-    "comments_count": 12
-  },
-  {
-    "id": "hn_46379183",
-    "source": "HackerNews",
-    "title": "Nvidia to buy assets from Groq for $20B cash",
-    "url": "https://www.cnbc.com/2025/12/24/nvidia-buying-ai-chip-startup-groq-for-about-20-billion-biggest-deal.html",
-    "content": "<a href=\"https:&#x2F;&#x2F;groq.com&#x2F;newsroom&#x2F;groq-and-nvidia-enter-non-exclusive-inference-technology-licensing-agreement-to-accelerate-ai-inference-at-global-scale\" rel=\"nofollow\">https:&#x2F;&#x2F;groq.com&#x2F;newsroom&#x2F;groq-and-nvidia-enter-non-exclusiv...</a>",
-    "author": "nickrubin",
-    "score": 613,
-    "publish_time": "2025-12-25T05:02:15",
-    "comments_count": 349
+    "author": "Aissen",
+    "score": 1411,
+    "publish_time": "2025-12-24T01:33:42",
+    "comments_count": 529
   },
   {
     "id": "hn_46314540",
@@ -319,15 +286,120 @@
     "comments_count": 8
   },
   {
-    "id": "hn_46384919",
+    "id": "hn_46346026",
     "source": "HackerNews",
-    "title": "Alzheimer's can be reversed to achieve full neurological recovery in animals",
-    "url": "https://case.edu/news/new-study-shows-alzheimers-disease-can-be-reversed-achieve-full-neurological-recovery-not-just-prevented-or-slowed-animal-models",
+    "title": "Using Vectorize to build an unreasonably good search engine in 160 lines of code",
+    "url": "https://blog.partykit.io/posts/using-vectorize-to-build-search/",
     "content": "",
-    "author": "thunderbong",
-    "score": 70,
-    "publish_time": "2025-12-25T23:22:36",
-    "comments_count": 4
+    "author": "ColinWright",
+    "score": 103,
+    "publish_time": "2025-12-22T00:36:25",
+    "comments_count": 29
+  },
+  {
+    "id": "hn_46327191",
+    "source": "HackerNews",
+    "title": "Show HN: Exploring Mathematics with Python",
+    "url": "https://coe.psu.ac.th/ad/explore/",
+    "content": "",
+    "author": "Andrew2565",
+    "score": 181,
+    "publish_time": "2025-12-19T23:55:30",
+    "comments_count": 19
+  },
+  {
+    "id": "hn_46339532",
+    "source": "HackerNews",
+    "title": "Comptime – C# meta-programming with compile-time code generation and evaluation",
+    "url": "https://github.com/sebastienros/comptime",
+    "content": "",
+    "author": "bj-rn",
+    "score": 119,
+    "publish_time": "2025-12-21T04:49:52",
+    "comments_count": 51
+  },
+  {
+    "id": "hn_46348971",
+    "source": "HackerNews",
+    "title": "Handheld PC Community Forums",
+    "url": "https://www.hpcfactor.com/forums/category-view.asp",
+    "content": "",
+    "author": "walterbell",
+    "score": 39,
+    "publish_time": "2025-12-22T05:59:21",
+    "comments_count": 13
+  },
+  {
+    "id": 4576963,
+    "source": "新浪财经-7x24财经",
+    "title": "【2025北京土拍收官：年内共成功出让40宗地块，总成交金额约1427.42亿元】随着丰台花乡地块的",
+    "url": "https://finance.sina.cn/7x24/2025-12-26/detail-inhczxqe1617940.d.html",
+    "content": "【2025北京土拍收官：年内共成功出让40宗地块，总成交金额约1427.42亿元】随着丰台花乡地块的成功出让，2025年北京土拍正式落下帷幕。据记者统计，年内北京共成功出让40宗地块，与上年同期基本持平，总成交金额约1427.42亿元。城六区供地显著发力，海淀区以7宗供地居首且创下近五年峰值，带动市场溢价率回升，年内最高溢价率达39.18%。从拿地趋势来看，联合拿地成为市场主流，房企联合拿地量同比增长180%。值得关注的是，在市场信心回升背景下，懋源地产等民企强势回归，其中懋源地产年内拿地2宗追平近五年总量。（北京商报）",
+    "publish_time": "2025-12-26 00:24:21",
+    "tags": [
+      "其他"
+    ],
+    "stocks": []
+  },
+  {
+    "id": 4576962,
+    "source": "新浪财经-7x24财经",
+    "title": "【俄卢布汇率今年迄今已飙升逾四成 势创30年来最强年度表现】俄罗斯卢布今年迄今已飙升逾四成，涨幅领跑",
+    "url": "https://finance.sina.cn/7x24/2025-12-26/detail-inhczxpx8568787.d.html",
+    "content": "【俄卢布汇率今年迄今已飙升逾四成 势创30年来最强年度表现】俄罗斯卢布今年迄今已飙升逾四成，涨幅领跑全球主要货币，势将创下1994年以来的最强年度表现。数据显示，俄罗斯卢布兑美元年初至今上涨45.5%，目前汇率接近1美元兑78卢布，正逼近2022年乌克兰冲突升级前的水平。",
+    "publish_time": "2025-12-26 00:19:57",
+    "tags": [
+      "市场",
+      "国际"
+    ],
+    "stocks": [
+      {
+        "market": "foreign",
+        "symbol": "fx_srubusd",
+        "key": "卢布"
+      },
+      {
+        "market": "foreign",
+        "symbol": "fx_susdrub",
+        "key": "俄罗斯卢布"
+      }
+    ]
+  },
+  {
+    "id": 4576961,
+    "source": "新浪财经-7x24财经",
+    "title": "据俄罗斯莫斯科市长和市政府官网信息，中国兵马俑将于2026年10月在莫斯科展出。",
+    "url": "https://finance.sina.cn/7x24/2025-12-26/detail-inhczxqe1616679.d.html",
+    "content": "据俄罗斯莫斯科市长和市政府官网信息，中国兵马俑将于2026年10月在莫斯科展出。",
+    "publish_time": "2025-12-26 00:18:15",
+    "tags": [
+      "国际"
+    ],
+    "stocks": []
+  },
+  {
+    "id": 4576960,
+    "source": "新浪财经-7x24财经",
+    "title": "一名男子在乌克兰基辅地铁持刀袭击乘客，致两人受伤。",
+    "url": "https://finance.sina.cn/7x24/2025-12-26/detail-inhczxpx2995868.d.html",
+    "content": "一名男子在乌克兰基辅地铁持刀袭击乘客，致两人受伤。",
+    "publish_time": "2025-12-26 00:14:20",
+    "tags": [
+      "国际"
+    ],
+    "stocks": []
+  },
+  {
+    "id": 4576959,
+    "source": "新浪财经-7x24财经",
+    "title": "乌克兰总统泽连斯基：今日与美国特使维特科夫、库什纳通话。",
+    "url": "https://finance.sina.cn/7x24/2025-12-26/detail-inhczxqe1615372.d.html",
+    "content": "乌克兰总统泽连斯基：今日与美国特使维特科夫、库什纳通话。",
+    "publish_time": "2025-12-26 00:11:50",
+    "tags": [
+      "国际"
+    ],
+    "stocks": []
   },
   {
     "id": 4576958,
@@ -960,96 +1032,6 @@
       "国际"
     ],
     "stocks": []
-  },
-  {
-    "id": 4576921,
-    "source": "新浪财经-7x24财经",
-    "title": "【金陵体育公布2025年前三季度利润分配预案：拟10派1元】金陵体育12月25日晚间发布2025年前",
-    "url": "https://finance.sina.cn/7x24/2025-12-25/detail-inhcztfx4622429.d.html",
-    "content": "【金陵体育公布2025年前三季度利润分配预案：拟10派1元】金陵体育12月25日晚间发布2025年前三季度利润分配预案，拟向全体股东每10股派发现金股利1元（含税），合计派发现金股利1412.1万元（含税）。本次利润分配预案需经股东会审议通过后方可实施。",
-    "publish_time": "2025-12-25 22:40:45",
-    "tags": [
-      "其他"
-    ],
-    "stocks": [
-      {
-        "market": "cn",
-        "symbol": "sz300651",
-        "key": "金陵体育"
-      }
-    ]
-  },
-  {
-    "id": 4576920,
-    "source": "新浪财经-7x24财经",
-    "title": "【原招商证券王先爽入职国联民生研究所，任所长助理、货币金融研究院院长】12月25日，原招商证券银行业",
-    "url": "https://finance.sina.cn/7x24/2025-12-25/detail-inhcztfz8679064.d.html",
-    "content": "【原招商证券王先爽入职国联民生研究所，任所长助理、货币金融研究院院长】12月25日，原招商证券银行业首席分析师王先爽入职国联民生研究所，担任所长助理、货币金融研究院院长。",
-    "publish_time": "2025-12-25 22:39:59",
-    "tags": [
-      "其他"
-    ],
-    "stocks": [
-      {
-        "market": "cn",
-        "symbol": "sh600999",
-        "key": "招商证券"
-      },
-      {
-        "market": "hk",
-        "symbol": "06099",
-        "key": "招商证券"
-      },
-      {
-        "market": "fund",
-        "symbol": "001220",
-        "key": "民生研究",
-        "sym_party_status": "0"
-      }
-    ]
-  },
-  {
-    "id": 4576919,
-    "source": "新浪财经-7x24财经",
-    "title": "玻璃连续主力合约日内跌1%，现报1039.00元。",
-    "url": "https://finance.sina.cn/7x24/2025-12-25/detail-inhcztfz8678937.d.html",
-    "content": "玻璃连续主力合约日内跌1%，现报1039.00元。",
-    "publish_time": "2025-12-25 22:39:33",
-    "tags": [
-      "市场",
-      "焦点"
-    ],
-    "stocks": []
-  },
-  {
-    "id": 4576918,
-    "source": "新浪财经-7x24财经",
-    "title": "【匈牙利总理称欧盟正在分崩离析】匈牙利总理欧尔班在接受采访时表示，俄乌冲突看似是局势升级，但真正根源",
-    "url": "https://finance.sina.cn/7x24/2025-12-25/detail-inhczthc3320815.d.html",
-    "content": "【匈牙利总理称欧盟正在分崩离析】匈牙利总理欧尔班在接受采访时表示，俄乌冲突看似是局势升级，但真正根源是西欧政治、经济和社会的衰落。欧尔班说，欧盟正在分崩离析，欧盟官僚机构的扩张野心却不断增强。如果欧盟不能迅速进行深刻的重组，局势将变得无法挽回。",
-    "publish_time": "2025-12-25 22:37:58",
-    "tags": [
-      "国际"
-    ],
-    "stocks": []
-  },
-  {
-    "id": 4576917,
-    "source": "新浪财经-7x24财经",
-    "title": "【沃特股份：已有部分牌号LCP材料满足客户宇航级材料标准】沃特股份12月25日在互动平台表示，公司目",
-    "url": "https://finance.sina.cn/7x24/2025-12-25/detail-inhcztfz3110279.d.html",
-    "content": "【沃特股份：已有部分牌号LCP材料满足客户宇航级材料标准】沃特股份12月25日在互动平台表示，公司目前已有部分牌号LCP材料满足客户宇航级材料标准。",
-    "publish_time": "2025-12-25 22:37:48",
-    "tags": [
-      "公司"
-    ],
-    "stocks": [
-      {
-        "market": "cn",
-        "symbol": "sz002886",
-        "key": "沃特股份"
-      }
-    ]
   },
   {
     "id": 784858,

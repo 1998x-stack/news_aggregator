@@ -52,3 +52,1217 @@
 2025-12-26 00:10:06.024 | INFO     | __main__:extract_content:315 - 开始内容抽取阶段
 2025-12-26 00:10:06.024 | INFO     | __main__:extract_content:316 - ==================================================
 2025-12-26 00:10:06.025 | INFO     | __main__:extract_content:331 - 需要抽取全文: 62 条
+2025-12-26 00:12:22.206 | INFO     | extractors.content_extractor:extract_batch:241 - 批量提取完成: 49/50 成功
+2025-12-26 00:12:22.206 | INFO     | __main__:extract_content:350 - 成功抽取全文: 49 条
+2025-12-26 00:12:22.207 | INFO     | __main__:classify_items:376 - ==================================================
+2025-12-26 00:12:22.207 | INFO     | __main__:classify_items:377 - 开始分类标注阶段
+2025-12-26 00:12:22.207 | INFO     | __main__:classify_items:378 - ==================================================
+2025-12-26 00:12:22.219 | INFO     | utils.ollama_client:__init__:104 - OllamaClient初始化完成，服务地址: http://localhost:11434
+2025-12-26 00:12:22.222 | ERROR    | __main__:run:656 - 流水线异常: ['Traceback (most recent call last):\n', '  File "/Users/mx/Desktop/news_aggregator/main.py", line 636, in run\n    self.classify_items()\n', '  File "/Users/mx/Desktop/news_aggregator/main.py", line 385, in classify_items\n    classifier = self._get_classifier()\n                 ^^^^^^^^^^^^^^^^^^^^^^\n', '  File "/Users/mx/Desktop/news_aggregator/main.py", line 170, in _get_classifier\n    self._classifier = create_classifier()\n                       ^^^^^^^^^^^^^^^^^^^\n', '  File "/Users/mx/Desktop/news_aggregator/analyzers/classifier.py", line 649, in create_classifier\n    return ContentClassifier(\n           ^^^^^^^^^^^^^^^^^^\n', '  File "/Users/mx/Desktop/news_aggregator/analyzers/classifier.py", line 211, in __init__\n    self._system_prompt = self._build_system_prompt()\n                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n', '  File "/Users/mx/Desktop/news_aggregator/analyzers/classifier.py", line 229, in _build_system_prompt\n    prompt_template = get_prompt_template(PromptType.CLASSIFICATION)\n                      ^^^^^^^^^^^^^^^^^^^\n', "NameError: name 'get_prompt_template' is not defined\n"]
+2025-12-26 00:12:22.222 | INFO     | __main__:run:665 - ============================================================
+2025-12-26 00:12:22.222 | INFO     | __main__:run:666 - 流水线完成 - 耗时: 178.4秒
+2025-12-26 00:12:22.222 | INFO     | __main__:run:667 - 结果: 失败
+2025-12-26 00:12:22.222 | INFO     | __main__:run:668 - ============================================================
+2025-12-26 00:12:22.223 | DEBUG    | utils.file_utils:save_json:757 - JSON已保存: outputs/2025-12-26_pipeline_result.json
+2025-12-26 00:12:22.223 | INFO     | __main__:main:788 - 流水线完成: {'date': '2025-12-26', 'start_time': '2025-12-26T00:09:23.863956', 'stages': {'collect': {'status': 'done', 'count': 148}, 'extract_content': {'status': 'done'}}, 'reports': {}, 'success': False, 'error': '[\'Traceback (most recent call last):\\n\', \'  File "/Users/mx/Desktop/news_aggregator/main.py", line 636, in run\\n    self.classify_items()\\n\', \'  File "/Users/mx/Desktop/news_aggregator/main.py", line 385, in classify_items\\n    classifier = self._get_classifier()\\n                 ^^^^^^^^^^^^^^^^^^^^^^\\n\', \'  File "/Users/mx/Desktop/news_aggregator/main.py", line 170, in _get_classifier\\n    self._classifier = create_classifier()\\n                       ^^^^^^^^^^^^^^^^^^^\\n\', \'  File "/Users/mx/Desktop/news_aggregator/analyzers/classifier.py", line 649, in create_classifier\\n    return ContentClassifier(\\n           ^^^^^^^^^^^^^^^^^^\\n\', \'  File "/Users/mx/Desktop/news_aggregator/analyzers/classifier.py", line 211, in __init__\\n    self._system_prompt = self._build_system_prompt()\\n                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n\', \'  File "/Users/mx/Desktop/news_aggregator/analyzers/classifier.py", line 229, in _build_system_prompt\\n    prompt_template = get_prompt_template(PromptType.CLASSIFICATION)\\n                      ^^^^^^^^^^^^^^^^^^^\\n\', "NameError: name \'get_prompt_template\' is not defined\\n"]', 'end_time': '2025-12-26T00:12:22.222458', 'duration_seconds': 178.358502}
+2025-12-26 00:12:54.453 | INFO     | __main__:__init__:144 - NewsAggregatorPipeline 初始化完成
+2025-12-26 00:12:54.453 | INFO     | __main__:run:599 - ============================================================
+2025-12-26 00:12:54.453 | INFO     | __main__:run:600 - 新闻聚合分析流水线启动 - 2025-12-26
+2025-12-26 00:12:54.453 | INFO     | __main__:run:601 - ============================================================
+2025-12-26 00:12:54.453 | INFO     | __main__:collect_data:198 - ==================================================
+2025-12-26 00:12:54.453 | INFO     | __main__:collect_data:199 - 开始数据采集阶段
+2025-12-26 00:12:54.453 | INFO     | __main__:collect_data:200 - ==================================================
+2025-12-26 00:12:54.453 | INFO     | __main__:collect_data:207 - 采集 HackerNews...
+2025-12-26 00:12:54.453 | INFO     | collectors.hackernews_collector:fetch_top_stories:423 - 获取 HN 热门故事 (limit=30)
+2025-12-26 00:12:56.587 | INFO     | collectors.hackernews_collector:fetch_stories:189 - 成功获取 30/30 个故事
+2025-12-26 00:12:56.588 | INFO     | __main__:collect_data:225 - HackerNews: 采集 30 条
+2025-12-26 00:12:56.588 | INFO     | __main__:collect_data:233 - 采集 RSS订阅...
+2025-12-26 00:12:56.588 | WARNING  | collectors.rss_collector:fetch_all:271 - 没有启用的 RSS 源
+2025-12-26 00:12:56.589 | INFO     | __main__:collect_data:250 - RSS: 采集 0 条
+2025-12-26 00:12:56.589 | INFO     | __main__:collect_data:258 - 采集 新浪财经直播...
+2025-12-26 00:12:56.589 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 7x24财经
+2025-12-26 00:12:56.589 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 7x24财经, 页码: 1
+2025-12-26 00:12:56.742 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 7x24财经 获取 20 条内容
+2025-12-26 00:12:57.247 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 7x24财经, 页码: 2
+2025-12-26 00:12:57.410 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 7x24财经 获取 20 条内容
+2025-12-26 00:12:57.917 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 期货直播
+2025-12-26 00:12:57.918 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 期货直播, 页码: 1
+2025-12-26 00:12:58.214 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 期货直播 获取 11 条内容
+2025-12-26 00:12:58.719 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 期货直播, 页码: 2
+2025-12-26 00:12:58.863 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 期货直播 获取 11 条内容
+2025-12-26 00:12:59.368 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 外汇直播
+2025-12-26 00:12:59.369 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 外汇直播, 页码: 1
+2025-12-26 00:12:59.543 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 外汇直播 获取 0 条内容
+2025-12-26 00:13:00.049 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 美股直播
+2025-12-26 00:13:00.050 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 美股直播, 页码: 1
+2025-12-26 00:13:00.193 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 美股直播 获取 1 条内容
+2025-12-26 00:13:00.695 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 美股直播, 页码: 2
+2025-12-26 00:13:00.816 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 美股直播 获取 1 条内容
+2025-12-26 00:13:01.320 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 港股直播
+2025-12-26 00:13:01.321 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 港股直播, 页码: 1
+2025-12-26 00:13:01.525 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 港股直播 获取 13 条内容
+2025-12-26 00:13:02.030 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 港股直播, 页码: 2
+2025-12-26 00:13:02.189 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 港股直播 获取 13 条内容
+2025-12-26 00:13:02.696 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 债券直播
+2025-12-26 00:13:02.697 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 债券直播, 页码: 1
+2025-12-26 00:13:02.889 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 债券直播 获取 14 条内容
+2025-12-26 00:13:03.391 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 债券直播, 页码: 2
+2025-12-26 00:13:03.553 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 债券直播 获取 14 条内容
+2025-12-26 00:13:04.055 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 基金直播
+2025-12-26 00:13:04.056 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 基金直播, 页码: 1
+2025-12-26 00:13:04.256 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 基金直播 获取 0 条内容
+2025-12-26 00:13:04.763 | INFO     | __main__:collect_data:276 - 新浪财经: 采集 148 条
+2025-12-26 00:13:04.765 | INFO     | __main__:collect_data:282 - 数据采集完成, 总计: 148 条
+2025-12-26 00:13:04.771 | DEBUG    | utils.file_utils:save_json:757 - JSON已保存: cache/2025-12-26_raw_items.json
+2025-12-26 00:13:04.771 | INFO     | __main__:collect_data:288 - 原始数据已缓存: cache/2025-12-26_raw_items.json
+2025-12-26 00:13:04.771 | INFO     | __main__:extract_content:314 - ==================================================
+2025-12-26 00:13:04.771 | INFO     | __main__:extract_content:315 - 开始内容抽取阶段
+2025-12-26 00:13:04.771 | INFO     | __main__:extract_content:316 - ==================================================
+2025-12-26 00:13:04.772 | INFO     | __main__:extract_content:331 - 需要抽取全文: 62 条
+2025-12-26 00:13:41.100 | INFO     | extractors.content_extractor:extract_batch:241 - 批量提取完成: 49/50 成功
+2025-12-26 00:13:41.100 | INFO     | __main__:extract_content:350 - 成功抽取全文: 49 条
+2025-12-26 00:13:41.100 | INFO     | __main__:classify_items:376 - ==================================================
+2025-12-26 00:13:41.100 | INFO     | __main__:classify_items:377 - 开始分类标注阶段
+2025-12-26 00:13:41.100 | INFO     | __main__:classify_items:378 - ==================================================
+2025-12-26 00:13:41.107 | INFO     | utils.ollama_client:__init__:104 - OllamaClient初始化完成，服务地址: http://localhost:11434
+2025-12-26 00:13:41.107 | INFO     | analyzers.classifier:__init__:213 - ContentClassifier初始化完成，模型: qwen2.5:0.5b
+2025-12-26 00:13:41.108 | ERROR    | __main__:run:656 - 流水线异常: ['Traceback (most recent call last):\n', '  File "/Users/mx/Desktop/news_aggregator/./main.py", line 636, in run\n    self.classify_items()\n', '  File "/Users/mx/Desktop/news_aggregator/./main.py", line 388, in classify_items\n    results = classifier.classify_batch(\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^\n', "TypeError: ContentClassifier.classify_batch() got an unexpected keyword argument 'max_workers'\n"]
+2025-12-26 00:13:41.108 | INFO     | __main__:run:665 - ============================================================
+2025-12-26 00:13:41.108 | INFO     | __main__:run:666 - 流水线完成 - 耗时: 46.7秒
+2025-12-26 00:13:41.108 | INFO     | __main__:run:667 - 结果: 失败
+2025-12-26 00:13:41.108 | INFO     | __main__:run:668 - ============================================================
+2025-12-26 00:13:41.108 | DEBUG    | utils.file_utils:save_json:757 - JSON已保存: outputs/2025-12-26_pipeline_result.json
+2025-12-26 00:13:41.108 | INFO     | __main__:main:788 - 流水线完成: {'date': '2025-12-26', 'start_time': '2025-12-26T00:12:54.453241', 'stages': {'collect': {'status': 'done', 'count': 148}, 'extract_content': {'status': 'done'}}, 'reports': {}, 'success': False, 'error': '[\'Traceback (most recent call last):\\n\', \'  File "/Users/mx/Desktop/news_aggregator/./main.py", line 636, in run\\n    self.classify_items()\\n\', \'  File "/Users/mx/Desktop/news_aggregator/./main.py", line 388, in classify_items\\n    results = classifier.classify_batch(\\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^\\n\', "TypeError: ContentClassifier.classify_batch() got an unexpected keyword argument \'max_workers\'\\n"]', 'end_time': '2025-12-26T00:13:41.108091', 'duration_seconds': 46.65485}
+2025-12-26 00:15:27.904 | INFO     | __main__:__init__:144 - NewsAggregatorPipeline 初始化完成
+2025-12-26 00:15:27.904 | INFO     | __main__:run:599 - ============================================================
+2025-12-26 00:15:27.904 | INFO     | __main__:run:600 - 新闻聚合分析流水线启动 - 2025-12-26
+2025-12-26 00:15:27.904 | INFO     | __main__:run:601 - ============================================================
+2025-12-26 00:15:27.904 | INFO     | __main__:collect_data:198 - ==================================================
+2025-12-26 00:15:27.904 | INFO     | __main__:collect_data:199 - 开始数据采集阶段
+2025-12-26 00:15:27.904 | INFO     | __main__:collect_data:200 - ==================================================
+2025-12-26 00:15:27.904 | INFO     | __main__:collect_data:207 - 采集 HackerNews...
+2025-12-26 00:15:27.904 | INFO     | collectors.hackernews_collector:fetch_top_stories:423 - 获取 HN 热门故事 (limit=30)
+2025-12-26 00:15:30.653 | INFO     | collectors.hackernews_collector:fetch_stories:189 - 成功获取 30/30 个故事
+2025-12-26 00:15:30.654 | INFO     | __main__:collect_data:225 - HackerNews: 采集 30 条
+2025-12-26 00:15:30.655 | INFO     | __main__:collect_data:233 - 采集 RSS订阅...
+2025-12-26 00:15:30.655 | WARNING  | collectors.rss_collector:fetch_all:271 - 没有启用的 RSS 源
+2025-12-26 00:15:30.655 | INFO     | __main__:collect_data:250 - RSS: 采集 0 条
+2025-12-26 00:15:30.655 | INFO     | __main__:collect_data:258 - 采集 新浪财经直播...
+2025-12-26 00:15:30.655 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 7x24财经
+2025-12-26 00:15:30.655 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 7x24财经, 页码: 1
+2025-12-26 00:15:31.479 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 7x24财经 获取 20 条内容
+2025-12-26 00:15:31.984 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 7x24财经, 页码: 2
+2025-12-26 00:15:32.083 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 7x24财经 获取 20 条内容
+2025-12-26 00:15:32.589 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 期货直播
+2025-12-26 00:15:32.590 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 期货直播, 页码: 1
+2025-12-26 00:15:32.745 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 期货直播 获取 11 条内容
+2025-12-26 00:15:33.251 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 期货直播, 页码: 2
+2025-12-26 00:15:33.452 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 期货直播 获取 11 条内容
+2025-12-26 00:15:33.953 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 外汇直播
+2025-12-26 00:15:33.954 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 外汇直播, 页码: 1
+2025-12-26 00:15:34.139 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 外汇直播 获取 0 条内容
+2025-12-26 00:15:34.642 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 美股直播
+2025-12-26 00:15:34.642 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 美股直播, 页码: 1
+2025-12-26 00:15:34.819 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 美股直播 获取 1 条内容
+2025-12-26 00:15:35.320 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 美股直播, 页码: 2
+2025-12-26 00:15:35.452 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 美股直播 获取 1 条内容
+2025-12-26 00:15:35.957 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 港股直播
+2025-12-26 00:15:35.958 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 港股直播, 页码: 1
+2025-12-26 00:15:36.177 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 港股直播 获取 13 条内容
+2025-12-26 00:15:36.682 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 港股直播, 页码: 2
+2025-12-26 00:15:36.806 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 港股直播 获取 13 条内容
+2025-12-26 00:15:37.311 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 债券直播
+2025-12-26 00:15:37.318 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 债券直播, 页码: 1
+2025-12-26 00:15:37.491 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 债券直播 获取 14 条内容
+2025-12-26 00:15:37.999 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 债券直播, 页码: 2
+2025-12-26 00:15:38.128 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 债券直播 获取 14 条内容
+2025-12-26 00:15:38.634 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 基金直播
+2025-12-26 00:15:38.634 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 基金直播, 页码: 1
+2025-12-26 00:15:38.905 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 基金直播 获取 0 条内容
+2025-12-26 00:15:39.409 | INFO     | __main__:collect_data:276 - 新浪财经: 采集 148 条
+2025-12-26 00:15:39.409 | INFO     | __main__:collect_data:282 - 数据采集完成, 总计: 148 条
+2025-12-26 00:15:39.414 | DEBUG    | utils.file_utils:save_json:757 - JSON已保存: cache/2025-12-26_raw_items.json
+2025-12-26 00:15:39.414 | INFO     | __main__:collect_data:288 - 原始数据已缓存: cache/2025-12-26_raw_items.json
+2025-12-26 00:15:39.415 | INFO     | __main__:extract_content:314 - ==================================================
+2025-12-26 00:15:39.415 | INFO     | __main__:extract_content:315 - 开始内容抽取阶段
+2025-12-26 00:15:39.415 | INFO     | __main__:extract_content:316 - ==================================================
+2025-12-26 00:15:39.416 | INFO     | __main__:extract_content:331 - 需要抽取全文: 62 条
+2025-12-26 00:16:32.318 | INFO     | extractors.content_extractor:extract_batch:241 - 批量提取完成: 49/50 成功
+2025-12-26 00:16:32.318 | INFO     | __main__:extract_content:350 - 成功抽取全文: 49 条
+2025-12-26 00:16:32.319 | INFO     | __main__:classify_items:376 - ==================================================
+2025-12-26 00:16:32.319 | INFO     | __main__:classify_items:377 - 开始分类标注阶段
+2025-12-26 00:16:32.319 | INFO     | __main__:classify_items:378 - ==================================================
+2025-12-26 00:16:32.323 | INFO     | utils.ollama_client:__init__:104 - OllamaClient初始化完成，服务地址: http://localhost:11434
+2025-12-26 00:16:32.323 | INFO     | analyzers.classifier:__init__:213 - ContentClassifier初始化完成，模型: qwen2.5:0.5b
+2025-12-26 00:16:32.323 | INFO     | analyzers.classifier:classify_batch:492 - 开始批量分类，共 148 项
+2025-12-26 00:16:32.324 | ERROR    | __main__:run:656 - 流水线异常: ['Traceback (most recent call last):\n', '  File "/Users/mx/Desktop/news_aggregator/./main.py", line 636, in run\n    self.classify_items()\n', '  File "/Users/mx/Desktop/news_aggregator/./main.py", line 388, in classify_items\n    results = classifier.classify_batch(\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^\n', '  File "/Users/mx/Desktop/news_aggregator/analyzers/classifier.py", line 495, in classify_batch\n    result = self.classify(item, use_llm=use_llm)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n', '  File "/Users/mx/Desktop/news_aggregator/analyzers/classifier.py", line 365, in classify\n    cache_key = item.get_hash()\n                ^^^^^^^^^^^^^\n', "AttributeError: 'dict' object has no attribute 'get_hash'\n"]
+2025-12-26 00:16:32.324 | INFO     | __main__:run:665 - ============================================================
+2025-12-26 00:16:32.324 | INFO     | __main__:run:666 - 流水线完成 - 耗时: 64.4秒
+2025-12-26 00:16:32.324 | INFO     | __main__:run:667 - 结果: 失败
+2025-12-26 00:16:32.324 | INFO     | __main__:run:668 - ============================================================
+2025-12-26 00:16:32.325 | DEBUG    | utils.file_utils:save_json:757 - JSON已保存: outputs/2025-12-26_pipeline_result.json
+2025-12-26 00:16:32.325 | INFO     | __main__:main:788 - 流水线完成: {'date': '2025-12-26', 'start_time': '2025-12-26T00:15:27.904529', 'stages': {'collect': {'status': 'done', 'count': 148}, 'extract_content': {'status': 'done'}}, 'reports': {}, 'success': False, 'error': '[\'Traceback (most recent call last):\\n\', \'  File "/Users/mx/Desktop/news_aggregator/./main.py", line 636, in run\\n    self.classify_items()\\n\', \'  File "/Users/mx/Desktop/news_aggregator/./main.py", line 388, in classify_items\\n    results = classifier.classify_batch(\\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^\\n\', \'  File "/Users/mx/Desktop/news_aggregator/analyzers/classifier.py", line 495, in classify_batch\\n    result = self.classify(item, use_llm=use_llm)\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n\', \'  File "/Users/mx/Desktop/news_aggregator/analyzers/classifier.py", line 365, in classify\\n    cache_key = item.get_hash()\\n                ^^^^^^^^^^^^^\\n\', "AttributeError: \'dict\' object has no attribute \'get_hash\'\\n"]', 'end_time': '2025-12-26T00:16:32.324793', 'duration_seconds': 64.420264}
+2025-12-26 00:18:40.843 | INFO     | __main__:__init__:144 - NewsAggregatorPipeline 初始化完成
+2025-12-26 00:18:40.844 | INFO     | __main__:run:599 - ============================================================
+2025-12-26 00:18:40.844 | INFO     | __main__:run:600 - 新闻聚合分析流水线启动 - 2025-12-26
+2025-12-26 00:18:40.844 | INFO     | __main__:run:601 - ============================================================
+2025-12-26 00:18:40.844 | INFO     | __main__:collect_data:198 - ==================================================
+2025-12-26 00:18:40.845 | INFO     | __main__:collect_data:199 - 开始数据采集阶段
+2025-12-26 00:18:40.845 | INFO     | __main__:collect_data:200 - ==================================================
+2025-12-26 00:18:40.845 | INFO     | __main__:collect_data:207 - 采集 HackerNews...
+2025-12-26 00:18:40.845 | INFO     | collectors.hackernews_collector:fetch_top_stories:423 - 获取 HN 热门故事 (limit=30)
+2025-12-26 00:18:42.661 | INFO     | collectors.hackernews_collector:fetch_stories:189 - 成功获取 30/30 个故事
+2025-12-26 00:18:42.662 | INFO     | __main__:collect_data:225 - HackerNews: 采集 30 条
+2025-12-26 00:18:42.662 | INFO     | __main__:collect_data:233 - 采集 RSS订阅...
+2025-12-26 00:18:42.662 | WARNING  | collectors.rss_collector:fetch_all:271 - 没有启用的 RSS 源
+2025-12-26 00:18:42.662 | INFO     | __main__:collect_data:250 - RSS: 采集 0 条
+2025-12-26 00:18:42.662 | INFO     | __main__:collect_data:258 - 采集 新浪财经直播...
+2025-12-26 00:18:42.663 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 7x24财经
+2025-12-26 00:18:42.663 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 7x24财经, 页码: 1
+2025-12-26 00:18:42.805 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 7x24财经 获取 20 条内容
+2025-12-26 00:18:43.311 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 7x24财经, 页码: 2
+2025-12-26 00:18:43.521 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 7x24财经 获取 20 条内容
+2025-12-26 00:18:44.027 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 期货直播
+2025-12-26 00:18:44.028 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 期货直播, 页码: 1
+2025-12-26 00:18:44.331 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 期货直播 获取 11 条内容
+2025-12-26 00:18:44.835 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 期货直播, 页码: 2
+2025-12-26 00:18:45.084 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 期货直播 获取 11 条内容
+2025-12-26 00:18:45.587 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 外汇直播
+2025-12-26 00:18:45.588 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 外汇直播, 页码: 1
+2025-12-26 00:18:46.043 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 外汇直播 获取 0 条内容
+2025-12-26 00:18:46.548 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 美股直播
+2025-12-26 00:18:46.550 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 美股直播, 页码: 1
+2025-12-26 00:18:46.798 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 美股直播 获取 1 条内容
+2025-12-26 00:18:47.303 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 美股直播, 页码: 2
+2025-12-26 00:18:47.523 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 美股直播 获取 1 条内容
+2025-12-26 00:18:48.029 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 港股直播
+2025-12-26 00:18:48.031 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 港股直播, 页码: 1
+2025-12-26 00:18:48.338 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 港股直播 获取 13 条内容
+2025-12-26 00:18:48.847 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 港股直播, 页码: 2
+2025-12-26 00:18:49.087 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 港股直播 获取 13 条内容
+2025-12-26 00:18:49.593 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 债券直播
+2025-12-26 00:18:49.593 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 债券直播, 页码: 1
+2025-12-26 00:18:49.834 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 债券直播 获取 14 条内容
+2025-12-26 00:18:50.339 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 债券直播, 页码: 2
+2025-12-26 00:18:50.554 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 债券直播 获取 14 条内容
+2025-12-26 00:18:51.061 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 基金直播
+2025-12-26 00:18:51.067 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 基金直播, 页码: 1
+2025-12-26 00:18:51.391 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 基金直播 获取 0 条内容
+2025-12-26 00:18:51.898 | INFO     | __main__:collect_data:276 - 新浪财经: 采集 148 条
+2025-12-26 00:18:51.899 | INFO     | __main__:collect_data:282 - 数据采集完成, 总计: 148 条
+2025-12-26 00:18:51.915 | DEBUG    | utils.file_utils:save_json:757 - JSON已保存: cache/2025-12-26_raw_items.json
+2025-12-26 00:18:51.915 | INFO     | __main__:collect_data:288 - 原始数据已缓存: cache/2025-12-26_raw_items.json
+2025-12-26 00:18:51.915 | INFO     | __main__:extract_content:314 - ==================================================
+2025-12-26 00:18:51.915 | INFO     | __main__:extract_content:315 - 开始内容抽取阶段
+2025-12-26 00:18:51.915 | INFO     | __main__:extract_content:316 - ==================================================
+2025-12-26 00:18:51.916 | INFO     | __main__:extract_content:331 - 需要抽取全文: 62 条
+2025-12-26 00:20:54.353 | INFO     | extractors.content_extractor:extract_batch:241 - 批量提取完成: 49/50 成功
+2025-12-26 00:20:54.353 | INFO     | __main__:extract_content:350 - 成功抽取全文: 49 条
+2025-12-26 00:20:54.354 | INFO     | __main__:classify_items:376 - ==================================================
+2025-12-26 00:20:54.354 | INFO     | __main__:classify_items:377 - 开始分类标注阶段
+2025-12-26 00:20:54.354 | INFO     | __main__:classify_items:378 - ==================================================
+2025-12-26 00:20:54.361 | INFO     | utils.ollama_client:__init__:104 - OllamaClient初始化完成，服务地址: http://localhost:11434
+2025-12-26 00:20:54.361 | INFO     | analyzers.classifier:__init__:213 - ContentClassifier初始化完成，模型: qwen2.5:0.5b
+2025-12-26 00:22:16.018 | INFO     | __main__:__init__:144 - NewsAggregatorPipeline 初始化完成
+2025-12-26 00:22:16.019 | INFO     | __main__:run:599 - ============================================================
+2025-12-26 00:22:16.019 | INFO     | __main__:run:600 - 新闻聚合分析流水线启动 - 2025-12-26
+2025-12-26 00:22:16.019 | INFO     | __main__:run:601 - ============================================================
+2025-12-26 00:22:16.019 | INFO     | __main__:collect_data:198 - ==================================================
+2025-12-26 00:22:16.019 | INFO     | __main__:collect_data:199 - 开始数据采集阶段
+2025-12-26 00:22:16.019 | INFO     | __main__:collect_data:200 - ==================================================
+2025-12-26 00:22:16.019 | INFO     | __main__:collect_data:207 - 采集 HackerNews...
+2025-12-26 00:22:16.020 | INFO     | collectors.hackernews_collector:fetch_top_stories:423 - 获取 HN 热门故事 (limit=30)
+2025-12-26 00:22:18.139 | INFO     | collectors.hackernews_collector:fetch_stories:189 - 成功获取 30/30 个故事
+2025-12-26 00:22:18.139 | INFO     | __main__:collect_data:225 - HackerNews: 采集 30 条
+2025-12-26 00:22:18.140 | INFO     | __main__:collect_data:233 - 采集 RSS订阅...
+2025-12-26 00:22:18.140 | WARNING  | collectors.rss_collector:fetch_all:271 - 没有启用的 RSS 源
+2025-12-26 00:22:18.140 | INFO     | __main__:collect_data:250 - RSS: 采集 0 条
+2025-12-26 00:22:18.140 | INFO     | __main__:collect_data:258 - 采集 新浪财经直播...
+2025-12-26 00:22:18.141 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 7x24财经
+2025-12-26 00:22:18.141 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 7x24财经, 页码: 1
+2025-12-26 00:22:18.310 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 7x24财经 获取 20 条内容
+2025-12-26 00:22:18.815 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 7x24财经, 页码: 2
+2025-12-26 00:22:19.036 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 7x24财经 获取 20 条内容
+2025-12-26 00:22:19.542 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 期货直播
+2025-12-26 00:22:19.543 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 期货直播, 页码: 1
+2025-12-26 00:22:19.853 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 期货直播 获取 11 条内容
+2025-12-26 00:22:20.356 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 期货直播, 页码: 2
+2025-12-26 00:22:20.639 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 期货直播 获取 11 条内容
+2025-12-26 00:22:21.145 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 外汇直播
+2025-12-26 00:22:21.145 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 外汇直播, 页码: 1
+2025-12-26 00:22:21.568 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 外汇直播 获取 0 条内容
+2025-12-26 00:22:22.074 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 美股直播
+2025-12-26 00:22:22.076 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 美股直播, 页码: 1
+2025-12-26 00:22:22.319 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 美股直播 获取 1 条内容
+2025-12-26 00:22:22.825 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 美股直播, 页码: 2
+2025-12-26 00:22:23.015 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 美股直播 获取 1 条内容
+2025-12-26 00:22:23.521 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 港股直播
+2025-12-26 00:22:23.523 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 港股直播, 页码: 1
+2025-12-26 00:22:23.950 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 港股直播 获取 13 条内容
+2025-12-26 00:22:24.454 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 港股直播, 页码: 2
+2025-12-26 00:22:24.695 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 港股直播 获取 13 条内容
+2025-12-26 00:22:25.201 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 债券直播
+2025-12-26 00:22:25.202 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 债券直播, 页码: 1
+2025-12-26 00:22:25.453 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 债券直播 获取 14 条内容
+2025-12-26 00:22:25.959 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 债券直播, 页码: 2
+2025-12-26 00:22:26.273 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 债券直播 获取 14 条内容
+2025-12-26 00:22:26.779 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 基金直播
+2025-12-26 00:22:26.780 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 基金直播, 页码: 1
+2025-12-26 00:22:27.052 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 基金直播 获取 0 条内容
+2025-12-26 00:22:27.560 | INFO     | __main__:collect_data:276 - 新浪财经: 采集 148 条
+2025-12-26 00:22:27.562 | INFO     | __main__:collect_data:282 - 数据采集完成, 总计: 148 条
+2025-12-26 00:22:27.577 | DEBUG    | utils.file_utils:save_json:757 - JSON已保存: cache/2025-12-26_raw_items.json
+2025-12-26 00:22:27.578 | INFO     | __main__:collect_data:288 - 原始数据已缓存: cache/2025-12-26_raw_items.json
+2025-12-26 00:22:27.578 | INFO     | __main__:extract_content:314 - ==================================================
+2025-12-26 00:22:27.578 | INFO     | __main__:extract_content:315 - 开始内容抽取阶段
+2025-12-26 00:22:27.578 | INFO     | __main__:extract_content:316 - ==================================================
+2025-12-26 00:22:27.579 | INFO     | __main__:extract_content:331 - 需要抽取全文: 62 条
+2025-12-26 00:23:41.517 | INFO     | extractors.content_extractor:extract_batch:241 - 批量提取完成: 49/50 成功
+2025-12-26 00:23:41.518 | INFO     | __main__:extract_content:350 - 成功抽取全文: 49 条
+2025-12-26 00:23:41.518 | INFO     | __main__:classify_items:376 - ==================================================
+2025-12-26 00:23:41.518 | INFO     | __main__:classify_items:377 - 开始分类标注阶段
+2025-12-26 00:23:41.518 | INFO     | __main__:classify_items:378 - ==================================================
+2025-12-26 00:23:41.524 | INFO     | utils.ollama_client:__init__:104 - OllamaClient初始化完成，服务地址: http://localhost:11434
+2025-12-26 00:23:41.525 | INFO     | analyzers.classifier:__init__:213 - ContentClassifier初始化完成，模型: qwen2.5:0.5b
+2025-12-26 00:23:41.525 | INFO     | analyzers.classifier:classify_batch:492 - 开始批量分类，共 148 项
+2025-12-26 00:23:41.528 | ERROR    | __main__:run:656 - 流水线异常: ['Traceback (most recent call last):\n', '  File "/Users/mx/Desktop/news_aggregator/main.py", line 636, in run\n    self.classify_items()\n', '  File "/Users/mx/Desktop/news_aggregator/main.py", line 388, in classify_items\n    results = classifier.classify_batch(\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^\n', '  File "/Users/mx/Desktop/news_aggregator/analyzers/classifier.py", line 495, in classify_batch\n    result = self.classify(item, use_llm=use_llm)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n', '  File "/Users/mx/Desktop/news_aggregator/analyzers/classifier.py", line 371, in classify\n    rule_category, matched_keywords = self.rule_classifier.classify(item)\n                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n', '  File "/Users/mx/Desktop/news_aggregator/analyzers/classifier.py", line 120, in classify\n    text = f"{item.title} {item.summary or \'\'} {item.content or \'\'}".lower()\n              ^^^^^^^^^^\n', "AttributeError: 'dict' object has no attribute 'title'\n"]
+2025-12-26 00:23:41.528 | INFO     | __main__:run:665 - ============================================================
+2025-12-26 00:23:41.528 | INFO     | __main__:run:666 - 流水线完成 - 耗时: 85.5秒
+2025-12-26 00:23:41.528 | INFO     | __main__:run:667 - 结果: 失败
+2025-12-26 00:23:41.528 | INFO     | __main__:run:668 - ============================================================
+2025-12-26 00:23:41.529 | DEBUG    | utils.file_utils:save_json:757 - JSON已保存: outputs/2025-12-26_pipeline_result.json
+2025-12-26 00:23:41.529 | INFO     | __main__:main:788 - 流水线完成: {'date': '2025-12-26', 'start_time': '2025-12-26T00:22:16.019006', 'stages': {'collect': {'status': 'done', 'count': 148}, 'extract_content': {'status': 'done'}}, 'reports': {}, 'success': False, 'error': '[\'Traceback (most recent call last):\\n\', \'  File "/Users/mx/Desktop/news_aggregator/main.py", line 636, in run\\n    self.classify_items()\\n\', \'  File "/Users/mx/Desktop/news_aggregator/main.py", line 388, in classify_items\\n    results = classifier.classify_batch(\\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^\\n\', \'  File "/Users/mx/Desktop/news_aggregator/analyzers/classifier.py", line 495, in classify_batch\\n    result = self.classify(item, use_llm=use_llm)\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n\', \'  File "/Users/mx/Desktop/news_aggregator/analyzers/classifier.py", line 371, in classify\\n    rule_category, matched_keywords = self.rule_classifier.classify(item)\\n                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n\', \'  File "/Users/mx/Desktop/news_aggregator/analyzers/classifier.py", line 120, in classify\\n    text = f"{item.title} {item.summary or \\\'\\\'} {item.content or \\\'\\\'}".lower()\\n              ^^^^^^^^^^\\n\', "AttributeError: \'dict\' object has no attribute \'title\'\\n"]', 'end_time': '2025-12-26T00:23:41.528236', 'duration_seconds': 85.50923}
+2025-12-26 00:25:43.280 | INFO     | __main__:__init__:144 - NewsAggregatorPipeline 初始化完成
+2025-12-26 00:25:43.280 | INFO     | __main__:run:599 - ============================================================
+2025-12-26 00:25:43.280 | INFO     | __main__:run:600 - 新闻聚合分析流水线启动 - 2025-12-26
+2025-12-26 00:25:43.280 | INFO     | __main__:run:601 - ============================================================
+2025-12-26 00:25:43.280 | INFO     | __main__:collect_data:198 - ==================================================
+2025-12-26 00:25:43.280 | INFO     | __main__:collect_data:199 - 开始数据采集阶段
+2025-12-26 00:25:43.280 | INFO     | __main__:collect_data:200 - ==================================================
+2025-12-26 00:25:43.280 | INFO     | __main__:collect_data:207 - 采集 HackerNews...
+2025-12-26 00:25:43.280 | INFO     | collectors.hackernews_collector:fetch_top_stories:423 - 获取 HN 热门故事 (limit=30)
+2025-12-26 00:25:45.534 | INFO     | collectors.hackernews_collector:fetch_stories:189 - 成功获取 30/30 个故事
+2025-12-26 00:25:45.535 | INFO     | __main__:collect_data:225 - HackerNews: 采集 30 条
+2025-12-26 00:25:45.535 | INFO     | __main__:collect_data:233 - 采集 RSS订阅...
+2025-12-26 00:25:45.535 | WARNING  | collectors.rss_collector:fetch_all:271 - 没有启用的 RSS 源
+2025-12-26 00:25:45.535 | INFO     | __main__:collect_data:250 - RSS: 采集 0 条
+2025-12-26 00:25:45.535 | INFO     | __main__:collect_data:258 - 采集 新浪财经直播...
+2025-12-26 00:25:45.536 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 7x24财经
+2025-12-26 00:25:45.536 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 7x24财经, 页码: 1
+2025-12-26 00:25:45.706 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 7x24财经 获取 20 条内容
+2025-12-26 00:25:46.212 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 7x24财经, 页码: 2
+2025-12-26 00:25:46.454 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 7x24财经 获取 20 条内容
+2025-12-26 00:25:46.959 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 期货直播
+2025-12-26 00:25:46.961 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 期货直播, 页码: 1
+2025-12-26 00:25:47.420 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 期货直播 获取 11 条内容
+2025-12-26 00:25:47.925 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 期货直播, 页码: 2
+2025-12-26 00:25:48.251 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 期货直播 获取 11 条内容
+2025-12-26 00:25:48.757 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 外汇直播
+2025-12-26 00:25:48.757 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 外汇直播, 页码: 1
+2025-12-26 00:25:49.155 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 外汇直播 获取 0 条内容
+2025-12-26 00:25:49.656 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 美股直播
+2025-12-26 00:25:49.657 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 美股直播, 页码: 1
+2025-12-26 00:25:49.883 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 美股直播 获取 1 条内容
+2025-12-26 00:25:50.388 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 美股直播, 页码: 2
+2025-12-26 00:25:50.615 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 美股直播 获取 1 条内容
+2025-12-26 00:25:51.122 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 港股直播
+2025-12-26 00:25:51.123 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 港股直播, 页码: 1
+2025-12-26 00:25:51.518 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 港股直播 获取 13 条内容
+2025-12-26 00:25:52.023 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 港股直播, 页码: 2
+2025-12-26 00:25:52.293 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 港股直播 获取 13 条内容
+2025-12-26 00:25:52.795 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 债券直播
+2025-12-26 00:25:52.796 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 债券直播, 页码: 1
+2025-12-26 00:25:53.047 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 债券直播 获取 14 条内容
+2025-12-26 00:25:53.549 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 债券直播, 页码: 2
+2025-12-26 00:25:53.845 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 债券直播 获取 14 条内容
+2025-12-26 00:25:54.351 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 基金直播
+2025-12-26 00:25:54.352 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 基金直播, 页码: 1
+2025-12-26 00:25:54.589 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 基金直播 获取 0 条内容
+2025-12-26 00:25:55.092 | INFO     | __main__:collect_data:276 - 新浪财经: 采集 148 条
+2025-12-26 00:25:55.093 | INFO     | __main__:collect_data:282 - 数据采集完成, 总计: 148 条
+2025-12-26 00:25:55.095 | DEBUG    | utils.file_utils:save_json:757 - JSON已保存: cache/2025-12-26_raw_items.json
+2025-12-26 00:25:55.095 | INFO     | __main__:collect_data:288 - 原始数据已缓存: cache/2025-12-26_raw_items.json
+2025-12-26 00:25:55.095 | INFO     | __main__:extract_content:314 - ==================================================
+2025-12-26 00:25:55.095 | INFO     | __main__:extract_content:315 - 开始内容抽取阶段
+2025-12-26 00:25:55.095 | INFO     | __main__:extract_content:316 - ==================================================
+2025-12-26 00:25:55.096 | INFO     | __main__:extract_content:331 - 需要抽取全文: 62 条
+2025-12-26 00:27:56.953 | INFO     | extractors.content_extractor:extract_batch:241 - 批量提取完成: 49/50 成功
+2025-12-26 00:27:56.953 | INFO     | __main__:extract_content:350 - 成功抽取全文: 49 条
+2025-12-26 00:27:56.953 | INFO     | __main__:classify_items:376 - ==================================================
+2025-12-26 00:27:56.953 | INFO     | __main__:classify_items:377 - 开始分类标注阶段
+2025-12-26 00:27:56.953 | INFO     | __main__:classify_items:378 - ==================================================
+2025-12-26 00:27:56.961 | INFO     | utils.ollama_client:__init__:104 - OllamaClient初始化完成，服务地址: http://localhost:11434
+2025-12-26 00:27:56.961 | INFO     | analyzers.classifier:__init__:213 - ContentClassifier初始化完成，模型: qwen2.5:0.5b
+2025-12-26 00:27:56.961 | INFO     | analyzers.classifier:classify_batch:492 - 开始批量分类，共 148 项
+2025-12-26 00:27:56.964 | ERROR    | __main__:run:656 - 流水线异常: ['Traceback (most recent call last):\n', '  File "/Users/mx/Desktop/news_aggregator/./main.py", line 636, in run\n    self.classify_items()\n', '  File "/Users/mx/Desktop/news_aggregator/./main.py", line 388, in classify_items\n    results = classifier.classify_batch(\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^\n', '  File "/Users/mx/Desktop/news_aggregator/analyzers/classifier.py", line 495, in classify_batch\n    result = self.classify(item, use_llm=use_llm)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n', '  File "/Users/mx/Desktop/news_aggregator/analyzers/classifier.py", line 372, in classify\n    rule_importance = self.rule_classifier.evaluate_importance(item)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n', '  File "/Users/mx/Desktop/news_aggregator/analyzers/classifier.py", line 155, in evaluate_importance\n    text = f"{item.title} {item.summary or \'\'}".lower()\n              ^^^^^^^^^^\n', "AttributeError: 'dict' object has no attribute 'title'\n"]
+2025-12-26 00:27:56.964 | INFO     | __main__:run:665 - ============================================================
+2025-12-26 00:27:56.965 | INFO     | __main__:run:666 - 流水线完成 - 耗时: 133.7秒
+2025-12-26 00:27:56.965 | INFO     | __main__:run:667 - 结果: 失败
+2025-12-26 00:27:56.965 | INFO     | __main__:run:668 - ============================================================
+2025-12-26 00:27:56.965 | DEBUG    | utils.file_utils:save_json:757 - JSON已保存: outputs/2025-12-26_pipeline_result.json
+2025-12-26 00:27:56.965 | INFO     | __main__:main:788 - 流水线完成: {'date': '2025-12-26', 'start_time': '2025-12-26T00:25:43.280331', 'stages': {'collect': {'status': 'done', 'count': 148}, 'extract_content': {'status': 'done'}}, 'reports': {}, 'success': False, 'error': '[\'Traceback (most recent call last):\\n\', \'  File "/Users/mx/Desktop/news_aggregator/./main.py", line 636, in run\\n    self.classify_items()\\n\', \'  File "/Users/mx/Desktop/news_aggregator/./main.py", line 388, in classify_items\\n    results = classifier.classify_batch(\\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^\\n\', \'  File "/Users/mx/Desktop/news_aggregator/analyzers/classifier.py", line 495, in classify_batch\\n    result = self.classify(item, use_llm=use_llm)\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n\', \'  File "/Users/mx/Desktop/news_aggregator/analyzers/classifier.py", line 372, in classify\\n    rule_importance = self.rule_classifier.evaluate_importance(item)\\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n\', \'  File "/Users/mx/Desktop/news_aggregator/analyzers/classifier.py", line 155, in evaluate_importance\\n    text = f"{item.title} {item.summary or \\\'\\\'}".lower()\\n              ^^^^^^^^^^\\n\', "AttributeError: \'dict\' object has no attribute \'title\'\\n"]', 'end_time': '2025-12-26T00:27:56.964976', 'duration_seconds': 133.684645}
+2025-12-26 00:28:51.289 | INFO     | __main__:__init__:144 - NewsAggregatorPipeline 初始化完成
+2025-12-26 00:28:51.289 | INFO     | __main__:run:599 - ============================================================
+2025-12-26 00:28:51.289 | INFO     | __main__:run:600 - 新闻聚合分析流水线启动 - 2025-12-26
+2025-12-26 00:28:51.290 | INFO     | __main__:run:601 - ============================================================
+2025-12-26 00:28:51.290 | INFO     | __main__:collect_data:198 - ==================================================
+2025-12-26 00:28:51.290 | INFO     | __main__:collect_data:199 - 开始数据采集阶段
+2025-12-26 00:28:51.290 | INFO     | __main__:collect_data:200 - ==================================================
+2025-12-26 00:28:51.290 | INFO     | __main__:collect_data:207 - 采集 HackerNews...
+2025-12-26 00:28:51.290 | INFO     | collectors.hackernews_collector:fetch_top_stories:423 - 获取 HN 热门故事 (limit=30)
+2025-12-26 00:28:53.140 | INFO     | collectors.hackernews_collector:fetch_stories:189 - 成功获取 30/30 个故事
+2025-12-26 00:28:53.141 | INFO     | __main__:collect_data:225 - HackerNews: 采集 30 条
+2025-12-26 00:28:53.141 | INFO     | __main__:collect_data:233 - 采集 RSS订阅...
+2025-12-26 00:28:53.142 | WARNING  | collectors.rss_collector:fetch_all:271 - 没有启用的 RSS 源
+2025-12-26 00:28:53.142 | INFO     | __main__:collect_data:250 - RSS: 采集 0 条
+2025-12-26 00:28:53.142 | INFO     | __main__:collect_data:258 - 采集 新浪财经直播...
+2025-12-26 00:28:53.143 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 7x24财经
+2025-12-26 00:28:53.143 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 7x24财经, 页码: 1
+2025-12-26 00:28:53.294 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 7x24财经 获取 20 条内容
+2025-12-26 00:28:53.799 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 7x24财经, 页码: 2
+2025-12-26 00:28:53.905 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 7x24财经 获取 20 条内容
+2025-12-26 00:28:54.410 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 期货直播
+2025-12-26 00:28:54.412 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 期货直播, 页码: 1
+2025-12-26 00:28:54.924 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 期货直播 获取 11 条内容
+2025-12-26 00:28:55.429 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 期货直播, 页码: 2
+2025-12-26 00:28:55.741 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 期货直播 获取 11 条内容
+2025-12-26 00:28:56.247 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 外汇直播
+2025-12-26 00:28:56.248 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 外汇直播, 页码: 1
+2025-12-26 00:28:56.931 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 外汇直播 获取 0 条内容
+2025-12-26 00:28:57.436 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 美股直播
+2025-12-26 00:28:57.437 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 美股直播, 页码: 1
+2025-12-26 00:28:57.746 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 美股直播 获取 1 条内容
+2025-12-26 00:28:58.252 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 美股直播, 页码: 2
+2025-12-26 00:28:58.621 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 美股直播 获取 1 条内容
+2025-12-26 00:28:59.126 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 港股直播
+2025-12-26 00:28:59.127 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 港股直播, 页码: 1
+2025-12-26 00:28:59.478 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 港股直播 获取 13 条内容
+2025-12-26 00:28:59.984 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 港股直播, 页码: 2
+2025-12-26 00:29:00.291 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 港股直播 获取 14 条内容
+2025-12-26 00:29:00.796 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 债券直播
+2025-12-26 00:29:00.798 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 债券直播, 页码: 1
+2025-12-26 00:29:01.165 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 债券直播 获取 14 条内容
+2025-12-26 00:29:01.672 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 债券直播, 页码: 2
+2025-12-26 00:29:01.887 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 债券直播 获取 14 条内容
+2025-12-26 00:29:02.393 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 基金直播
+2025-12-26 00:29:02.394 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 基金直播, 页码: 1
+2025-12-26 00:29:02.903 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 基金直播 获取 0 条内容
+2025-12-26 00:29:03.410 | INFO     | __main__:collect_data:276 - 新浪财经: 采集 149 条
+2025-12-26 00:29:03.410 | INFO     | __main__:collect_data:282 - 数据采集完成, 总计: 149 条
+2025-12-26 00:29:03.415 | DEBUG    | utils.file_utils:save_json:757 - JSON已保存: cache/2025-12-26_raw_items.json
+2025-12-26 00:29:03.415 | INFO     | __main__:collect_data:288 - 原始数据已缓存: cache/2025-12-26_raw_items.json
+2025-12-26 00:29:03.416 | INFO     | __main__:extract_content:314 - ==================================================
+2025-12-26 00:29:03.416 | INFO     | __main__:extract_content:315 - 开始内容抽取阶段
+2025-12-26 00:29:03.416 | INFO     | __main__:extract_content:316 - ==================================================
+2025-12-26 00:29:03.417 | INFO     | __main__:extract_content:331 - 需要抽取全文: 62 条
+2025-12-26 00:29:40.114 | ERROR    | extractors.content_extractor:fetch_html:122 - 获取 HTML 失败 https://www.bbc.co.uk/news/articles/cdxwllqz1l0o: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2025-12-26 00:30:17.742 | INFO     | extractors.content_extractor:extract_batch:241 - 批量提取完成: 48/50 成功
+2025-12-26 00:30:17.742 | INFO     | __main__:extract_content:350 - 成功抽取全文: 48 条
+2025-12-26 00:30:17.742 | INFO     | __main__:classify_items:376 - ==================================================
+2025-12-26 00:30:17.743 | INFO     | __main__:classify_items:377 - 开始分类标注阶段
+2025-12-26 00:30:17.743 | INFO     | __main__:classify_items:378 - ==================================================
+2025-12-26 00:30:17.747 | INFO     | utils.ollama_client:__init__:104 - OllamaClient初始化完成，服务地址: http://localhost:11434
+2025-12-26 00:30:17.747 | INFO     | analyzers.classifier:__init__:213 - ContentClassifier初始化完成，模型: qwen2.5:0.5b
+2025-12-26 00:30:17.748 | INFO     | analyzers.classifier:classify_batch:492 - 开始批量分类，共 149 项
+2025-12-26 00:30:17.749 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.749 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.751 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.753 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.753 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.754 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.755 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.755 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.755 | INFO     | analyzers.classifier:classify_batch:502 - 分类进度: 10/149
+2025-12-26 00:30:17.757 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.761 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.762 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.762 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.764 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.764 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.767 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.767 | INFO     | analyzers.classifier:classify_batch:502 - 分类进度: 20/149
+2025-12-26 00:30:17.768 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.768 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.769 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.771 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.774 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.774 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.775 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.776 | INFO     | analyzers.classifier:classify_batch:502 - 分类进度: 30/149
+2025-12-26 00:30:17.776 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.776 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.776 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.776 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.777 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.777 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.777 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.777 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.777 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.777 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.777 | INFO     | analyzers.classifier:classify_batch:502 - 分类进度: 40/149
+2025-12-26 00:30:17.778 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.778 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.778 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.778 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.778 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.778 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.780 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.780 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.780 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.781 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.781 | INFO     | analyzers.classifier:classify_batch:502 - 分类进度: 50/149
+2025-12-26 00:30:17.781 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.781 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.782 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.782 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.782 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.782 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.782 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.782 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.783 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.783 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.783 | INFO     | analyzers.classifier:classify_batch:502 - 分类进度: 60/149
+2025-12-26 00:30:17.783 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.783 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.783 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.783 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.784 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.784 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.784 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.784 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.784 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.785 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.785 | INFO     | analyzers.classifier:classify_batch:502 - 分类进度: 70/149
+2025-12-26 00:30:17.785 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.785 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.785 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.785 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.786 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.786 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.786 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.786 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.786 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.786 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.787 | INFO     | analyzers.classifier:classify_batch:502 - 分类进度: 80/149
+2025-12-26 00:30:17.787 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.787 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 784858
+2025-12-26 00:30:17.787 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 784857
+2025-12-26 00:30:17.787 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 784856
+2025-12-26 00:30:17.787 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 784855
+2025-12-26 00:30:17.787 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 784854
+2025-12-26 00:30:17.787 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 784853
+2025-12-26 00:30:17.787 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 784852
+2025-12-26 00:30:17.787 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 784846
+2025-12-26 00:30:17.787 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 784843
+2025-12-26 00:30:17.787 | INFO     | analyzers.classifier:classify_batch:502 - 分类进度: 90/149
+2025-12-26 00:30:17.787 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 784841
+2025-12-26 00:30:17.787 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 784840
+2025-12-26 00:30:17.787 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.787 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 737114
+2025-12-26 00:30:17.787 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.788 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.788 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.788 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.788 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.788 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.789 | INFO     | analyzers.classifier:classify_batch:502 - 分类进度: 100/149
+2025-12-26 00:30:17.789 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.789 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.789 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.789 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.789 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.790 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.790 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.790 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.790 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.790 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.790 | INFO     | analyzers.classifier:classify_batch:502 - 分类进度: 110/149
+2025-12-26 00:30:17.790 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.791 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.791 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.791 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.791 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.791 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.791 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.791 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.792 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.792 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.792 | INFO     | analyzers.classifier:classify_batch:502 - 分类进度: 120/149
+2025-12-26 00:30:17.792 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.792 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.792 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.792 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.793 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.793 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.793 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.793 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.793 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.794 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.794 | INFO     | analyzers.classifier:classify_batch:502 - 分类进度: 130/149
+2025-12-26 00:30:17.794 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.794 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.794 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.794 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.794 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:30:17.795 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 753806
+2025-12-26 00:30:17.795 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 753805
+2025-12-26 00:30:17.795 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 753804
+2025-12-26 00:30:17.795 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 753800
+2025-12-26 00:30:17.795 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 753798
+2025-12-26 00:30:17.795 | INFO     | analyzers.classifier:classify_batch:502 - 分类进度: 140/149
+2025-12-26 00:30:17.795 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 753796
+2025-12-26 00:30:17.795 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 753795
+2025-12-26 00:30:17.795 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 753794
+2025-12-26 00:30:17.795 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 753793
+2025-12-26 00:30:17.795 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 753792
+2025-12-26 00:30:17.795 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 753791
+2025-12-26 00:30:17.795 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 753790
+2025-12-26 00:30:17.795 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 753789
+2025-12-26 00:30:17.795 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 753788
+2025-12-26 00:30:17.795 | INFO     | analyzers.classifier:classify_batch:514 - 分类完成，分布: {'programming': 16, 'other': 105, 'data_science': 3, 'product': 3, 'market': 14, 'research': 3, 'hardware': 2, 'ai_ml': 3}
+2025-12-26 00:30:17.795 | INFO     | analyzers.classifier:classify_batch:515 - 重要性分布: {3: 137, 4: 8, 2: 4}
+2025-12-26 00:30:17.795 | INFO     | __main__:classify_items:401 - 分类完成: 149 条
+2025-12-26 00:30:17.795 | INFO     | __main__:extract_info:456 - ==================================================
+2025-12-26 00:30:17.795 | INFO     | __main__:extract_info:457 - 开始信息抽取阶段
+2025-12-26 00:30:17.795 | INFO     | __main__:extract_info:458 - ==================================================
+2025-12-26 00:30:17.799 | INFO     | utils.ollama_client:__init__:104 - OllamaClient初始化完成，服务地址: http://localhost:11434
+2025-12-26 00:30:17.800 | INFO     | analyzers.extractor:__init__:139 - ContentExtractorLLM初始化完成, 模型: qwen3:4b
+2025-12-26 00:30:17.800 | INFO     | __main__:extract_info:469 - 高重要性文章: 8 条
+2025-12-26 00:30:17.800 | INFO     | analyzers.extractor:extract_batch:301 - 开始批量抽取, 共8条, 并行数: 2
+2025-12-26 00:30:17.800 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 0): EXTRACTION
+2025-12-26 00:30:17.800 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 2): EXTRACTION
+2025-12-26 00:30:17.800 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 1): EXTRACTION
+2025-12-26 00:30:17.800 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 3): EXTRACTION
+2025-12-26 00:30:17.801 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 4): EXTRACTION
+2025-12-26 00:30:17.801 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 5): EXTRACTION
+2025-12-26 00:30:17.801 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 6): EXTRACTION
+2025-12-26 00:30:17.801 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 7): EXTRACTION
+2025-12-26 00:30:17.801 | INFO     | __main__:extract_info:488 - 信息抽取完成
+2025-12-26 00:30:17.801 | INFO     | __main__:analyze_trends:514 - ==================================================
+2025-12-26 00:30:17.801 | INFO     | __main__:analyze_trends:515 - 开始趋势分析阶段
+2025-12-26 00:30:17.801 | INFO     | __main__:analyze_trends:516 - ==================================================
+2025-12-26 00:30:17.801 | INFO     | utils.ollama_client:__init__:104 - OllamaClient初始化完成，服务地址: http://localhost:11434
+2025-12-26 00:30:17.801 | INFO     | analyzers.trend_analyzer:__init__:164 - TrendAnalyzer初始化完成, 模型: qwen3:4b
+2025-12-26 00:30:17.801 | INFO     | analyzers.trend_analyzer:analyze:198 - 开始趋势分析, 文章数: 149
+2025-12-26 00:30:17.810 | ERROR    | __main__:run:656 - 流水线异常: ['Traceback (most recent call last):\n', '  File "/Users/mx/Desktop/news_aggregator/./main.py", line 644, in run\n    self.analyze_trends()\n', '  File "/Users/mx/Desktop/news_aggregator/./main.py", line 520, in analyze_trends\n    self.trend_report = analyzer.analyze(\n                        ^^^^^^^^^^^^^^^^^\n', '  File "/Users/mx/Desktop/news_aggregator/analyzers/trend_analyzer.py", line 212, in analyze\n    key_events = self._extract_key_events(articles)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n', '  File "/Users/mx/Desktop/news_aggregator/analyzers/trend_analyzer.py", line 454, in _extract_key_events\n    key_events.sort(key=lambda x: int(x.get("importance", 0)), reverse=True)\n', '  File "/Users/mx/Desktop/news_aggregator/analyzers/trend_analyzer.py", line 454, in <lambda>\n    key_events.sort(key=lambda x: int(x.get("importance", 0)), reverse=True)\n                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n', "ValueError: invalid literal for int() with base 10: 'ImportanceLevel.HIGH'\n"]
+2025-12-26 00:30:17.810 | INFO     | __main__:run:665 - ============================================================
+2025-12-26 00:30:17.810 | INFO     | __main__:run:666 - 流水线完成 - 耗时: 86.5秒
+2025-12-26 00:30:17.810 | INFO     | __main__:run:667 - 结果: 失败
+2025-12-26 00:30:17.810 | INFO     | __main__:run:668 - ============================================================
+2025-12-26 00:30:17.811 | DEBUG    | utils.file_utils:save_json:757 - JSON已保存: outputs/2025-12-26_pipeline_result.json
+2025-12-26 00:30:17.811 | INFO     | __main__:main:788 - 流水线完成: {'date': '2025-12-26', 'start_time': '2025-12-26T00:28:51.289909', 'stages': {'collect': {'status': 'done', 'count': 149}, 'extract_content': {'status': 'done'}, 'classify': {'status': 'done'}, 'extract_info': {'status': 'done'}}, 'reports': {}, 'success': False, 'error': '[\'Traceback (most recent call last):\\n\', \'  File "/Users/mx/Desktop/news_aggregator/./main.py", line 644, in run\\n    self.analyze_trends()\\n\', \'  File "/Users/mx/Desktop/news_aggregator/./main.py", line 520, in analyze_trends\\n    self.trend_report = analyzer.analyze(\\n                        ^^^^^^^^^^^^^^^^^\\n\', \'  File "/Users/mx/Desktop/news_aggregator/analyzers/trend_analyzer.py", line 212, in analyze\\n    key_events = self._extract_key_events(articles)\\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n\', \'  File "/Users/mx/Desktop/news_aggregator/analyzers/trend_analyzer.py", line 454, in _extract_key_events\\n    key_events.sort(key=lambda x: int(x.get("importance", 0)), reverse=True)\\n\', \'  File "/Users/mx/Desktop/news_aggregator/analyzers/trend_analyzer.py", line 454, in <lambda>\\n    key_events.sort(key=lambda x: int(x.get("importance", 0)), reverse=True)\\n                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n\', "ValueError: invalid literal for int() with base 10: \'ImportanceLevel.HIGH\'\\n"]', 'end_time': '2025-12-26T00:30:17.810544', 'duration_seconds': 86.520635}
+2025-12-26 00:32:36.389 | INFO     | __main__:__init__:144 - NewsAggregatorPipeline 初始化完成
+2025-12-26 00:32:36.390 | INFO     | __main__:run:599 - ============================================================
+2025-12-26 00:32:36.390 | INFO     | __main__:run:600 - 新闻聚合分析流水线启动 - 2025-12-26
+2025-12-26 00:32:36.390 | INFO     | __main__:run:601 - ============================================================
+2025-12-26 00:32:36.390 | INFO     | __main__:collect_data:198 - ==================================================
+2025-12-26 00:32:36.390 | INFO     | __main__:collect_data:199 - 开始数据采集阶段
+2025-12-26 00:32:36.390 | INFO     | __main__:collect_data:200 - ==================================================
+2025-12-26 00:32:36.390 | INFO     | __main__:collect_data:207 - 采集 HackerNews...
+2025-12-26 00:32:36.391 | INFO     | collectors.hackernews_collector:fetch_top_stories:423 - 获取 HN 热门故事 (limit=30)
+2025-12-26 00:32:38.293 | INFO     | collectors.hackernews_collector:fetch_stories:189 - 成功获取 30/30 个故事
+2025-12-26 00:32:38.293 | INFO     | __main__:collect_data:225 - HackerNews: 采集 30 条
+2025-12-26 00:32:38.294 | INFO     | __main__:collect_data:233 - 采集 RSS订阅...
+2025-12-26 00:32:38.294 | WARNING  | collectors.rss_collector:fetch_all:271 - 没有启用的 RSS 源
+2025-12-26 00:32:38.294 | INFO     | __main__:collect_data:250 - RSS: 采集 0 条
+2025-12-26 00:32:38.295 | INFO     | __main__:collect_data:258 - 采集 新浪财经直播...
+2025-12-26 00:32:38.295 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 7x24财经
+2025-12-26 00:32:38.295 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 7x24财经, 页码: 1
+2025-12-26 00:32:38.463 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 7x24财经 获取 20 条内容
+2025-12-26 00:32:38.968 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 7x24财经, 页码: 2
+2025-12-26 00:32:39.064 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 7x24财经 获取 20 条内容
+2025-12-26 00:32:39.569 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 期货直播
+2025-12-26 00:32:39.571 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 期货直播, 页码: 1
+2025-12-26 00:32:39.717 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 期货直播 获取 11 条内容
+2025-12-26 00:32:40.223 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 期货直播, 页码: 2
+2025-12-26 00:32:40.393 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 期货直播 获取 11 条内容
+2025-12-26 00:32:40.896 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 外汇直播
+2025-12-26 00:32:40.899 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 外汇直播, 页码: 1
+2025-12-26 00:32:41.138 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 外汇直播 获取 0 条内容
+2025-12-26 00:32:41.640 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 美股直播
+2025-12-26 00:32:41.642 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 美股直播, 页码: 1
+2025-12-26 00:32:41.830 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 美股直播 获取 1 条内容
+2025-12-26 00:32:42.336 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 美股直播, 页码: 2
+2025-12-26 00:32:42.464 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 美股直播 获取 1 条内容
+2025-12-26 00:32:42.970 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 港股直播
+2025-12-26 00:32:42.972 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 港股直播, 页码: 1
+2025-12-26 00:32:43.198 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 港股直播 获取 13 条内容
+2025-12-26 00:32:43.705 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 港股直播, 页码: 2
+2025-12-26 00:32:43.843 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 港股直播 获取 13 条内容
+2025-12-26 00:32:44.349 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 债券直播
+2025-12-26 00:32:44.351 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 债券直播, 页码: 1
+2025-12-26 00:32:44.528 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 债券直播 获取 14 条内容
+2025-12-26 00:32:45.030 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 债券直播, 页码: 2
+2025-12-26 00:32:45.198 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 债券直播 获取 14 条内容
+2025-12-26 00:32:45.704 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 基金直播
+2025-12-26 00:32:45.706 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 基金直播, 页码: 1
+2025-12-26 00:32:45.842 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 基金直播 获取 0 条内容
+2025-12-26 00:32:46.348 | INFO     | __main__:collect_data:276 - 新浪财经: 采集 148 条
+2025-12-26 00:32:46.349 | INFO     | __main__:collect_data:282 - 数据采集完成, 总计: 148 条
+2025-12-26 00:32:46.360 | DEBUG    | utils.file_utils:save_json:757 - JSON已保存: cache/2025-12-26_raw_items.json
+2025-12-26 00:32:46.360 | INFO     | __main__:collect_data:288 - 原始数据已缓存: cache/2025-12-26_raw_items.json
+2025-12-26 00:32:46.360 | INFO     | __main__:extract_content:314 - ==================================================
+2025-12-26 00:32:46.360 | INFO     | __main__:extract_content:315 - 开始内容抽取阶段
+2025-12-26 00:32:46.360 | INFO     | __main__:extract_content:316 - ==================================================
+2025-12-26 00:32:46.361 | INFO     | __main__:extract_content:331 - 需要抽取全文: 62 条
+2025-12-26 00:33:43.811 | INFO     | extractors.content_extractor:extract_batch:241 - 批量提取完成: 49/50 成功
+2025-12-26 00:33:43.812 | INFO     | __main__:extract_content:350 - 成功抽取全文: 49 条
+2025-12-26 00:33:43.812 | INFO     | __main__:classify_items:376 - ==================================================
+2025-12-26 00:33:43.812 | INFO     | __main__:classify_items:377 - 开始分类标注阶段
+2025-12-26 00:33:43.812 | INFO     | __main__:classify_items:378 - ==================================================
+2025-12-26 00:33:43.819 | INFO     | utils.ollama_client:__init__:104 - OllamaClient初始化完成，服务地址: http://localhost:11434
+2025-12-26 00:33:43.819 | INFO     | analyzers.classifier:__init__:213 - ContentClassifier初始化完成，模型: qwen2.5:0.5b
+2025-12-26 00:33:43.819 | INFO     | analyzers.classifier:classify_batch:492 - 开始批量分类，共 148 项
+2025-12-26 00:33:43.822 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.824 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.826 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.826 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.827 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.829 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.829 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.830 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.831 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.832 | INFO     | analyzers.classifier:classify_batch:502 - 分类进度: 10/148
+2025-12-26 00:33:43.832 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.833 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.834 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.835 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.835 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.837 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.840 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.841 | INFO     | analyzers.classifier:classify_batch:502 - 分类进度: 20/148
+2025-12-26 00:33:43.841 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.844 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.846 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.847 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.854 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.855 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.855 | INFO     | analyzers.classifier:classify_batch:502 - 分类进度: 30/148
+2025-12-26 00:33:43.856 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.856 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.856 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.857 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.857 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.857 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.857 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.858 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.858 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.858 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.858 | INFO     | analyzers.classifier:classify_batch:502 - 分类进度: 40/148
+2025-12-26 00:33:43.859 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.859 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.859 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.859 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.860 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.860 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.860 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.861 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.861 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.861 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.861 | INFO     | analyzers.classifier:classify_batch:502 - 分类进度: 50/148
+2025-12-26 00:33:43.862 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.862 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.862 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.862 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.863 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.863 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.863 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.863 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.864 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.864 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.864 | INFO     | analyzers.classifier:classify_batch:502 - 分类进度: 60/148
+2025-12-26 00:33:43.864 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.865 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.865 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.866 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.866 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.866 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.867 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.867 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.867 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.867 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.868 | INFO     | analyzers.classifier:classify_batch:502 - 分类进度: 70/148
+2025-12-26 00:33:43.868 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.868 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.868 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.869 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.869 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.869 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.870 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.870 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.871 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.871 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.871 | INFO     | analyzers.classifier:classify_batch:502 - 分类进度: 80/148
+2025-12-26 00:33:43.872 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.872 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 784858
+2025-12-26 00:33:43.872 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 784857
+2025-12-26 00:33:43.872 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 784856
+2025-12-26 00:33:43.872 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 784855
+2025-12-26 00:33:43.872 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 784854
+2025-12-26 00:33:43.872 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 784853
+2025-12-26 00:33:43.872 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 784852
+2025-12-26 00:33:43.872 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 784846
+2025-12-26 00:33:43.872 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 784843
+2025-12-26 00:33:43.873 | INFO     | analyzers.classifier:classify_batch:502 - 分类进度: 90/148
+2025-12-26 00:33:43.873 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 784841
+2025-12-26 00:33:43.873 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 784840
+2025-12-26 00:33:43.873 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.873 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 737114
+2025-12-26 00:33:43.873 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.874 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.874 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.874 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.874 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.882 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.883 | INFO     | analyzers.classifier:classify_batch:502 - 分类进度: 100/148
+2025-12-26 00:33:43.884 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.884 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.885 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.885 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.885 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.885 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.886 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.886 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 758337
+2025-12-26 00:33:43.886 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 758336
+2025-12-26 00:33:43.886 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 758334
+2025-12-26 00:33:43.886 | INFO     | analyzers.classifier:classify_batch:502 - 分类进度: 110/148
+2025-12-26 00:33:43.886 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 758332
+2025-12-26 00:33:43.886 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 758331
+2025-12-26 00:33:43.886 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 758330
+2025-12-26 00:33:43.886 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 758328
+2025-12-26 00:33:43.886 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 758324
+2025-12-26 00:33:43.886 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 758323
+2025-12-26 00:33:43.886 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 758322
+2025-12-26 00:33:43.886 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 758320
+2025-12-26 00:33:43.886 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 758319
+2025-12-26 00:33:43.887 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 758318
+2025-12-26 00:33:43.887 | INFO     | analyzers.classifier:classify_batch:502 - 分类进度: 120/148
+2025-12-26 00:33:43.887 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.888 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.888 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.888 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.896 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.898 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.899 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.900 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.902 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.902 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.902 | INFO     | analyzers.classifier:classify_batch:502 - 分类进度: 130/148
+2025-12-26 00:33:43.902 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.903 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.903 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.903 | WARNING  | analyzers.classifier:classify:453 - LLM分类失败: 'dict' object has no attribute 'to_prompt_text'
+2025-12-26 00:33:43.907 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 753806
+2025-12-26 00:33:43.907 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 753805
+2025-12-26 00:33:43.909 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 753804
+2025-12-26 00:33:43.909 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 753800
+2025-12-26 00:33:43.909 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 753798
+2025-12-26 00:33:43.909 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 753796
+2025-12-26 00:33:43.909 | INFO     | analyzers.classifier:classify_batch:502 - 分类进度: 140/148
+2025-12-26 00:33:43.909 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 753795
+2025-12-26 00:33:43.909 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 753794
+2025-12-26 00:33:43.909 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 753793
+2025-12-26 00:33:43.909 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 753792
+2025-12-26 00:33:43.909 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 753791
+2025-12-26 00:33:43.909 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 753790
+2025-12-26 00:33:43.909 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 753789
+2025-12-26 00:33:43.909 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 753788
+2025-12-26 00:33:43.910 | INFO     | analyzers.classifier:classify_batch:514 - 分类完成，分布: {'product': 4, 'research': 4, 'market': 14, 'programming': 16, 'data_science': 3, 'other': 102, 'hardware': 2, 'ai_ml': 3}
+2025-12-26 00:33:43.910 | INFO     | analyzers.classifier:classify_batch:515 - 重要性分布: {3: 135, 4: 8, 2: 5}
+2025-12-26 00:33:43.911 | INFO     | __main__:classify_items:401 - 分类完成: 148 条
+2025-12-26 00:33:43.911 | INFO     | __main__:extract_info:456 - ==================================================
+2025-12-26 00:33:43.911 | INFO     | __main__:extract_info:457 - 开始信息抽取阶段
+2025-12-26 00:33:43.911 | INFO     | __main__:extract_info:458 - ==================================================
+2025-12-26 00:33:43.917 | INFO     | utils.ollama_client:__init__:104 - OllamaClient初始化完成，服务地址: http://localhost:11434
+2025-12-26 00:33:43.921 | INFO     | analyzers.extractor:__init__:139 - ContentExtractorLLM初始化完成, 模型: qwen3:4b
+2025-12-26 00:33:43.924 | INFO     | __main__:extract_info:469 - 高重要性文章: 8 条
+2025-12-26 00:33:43.924 | INFO     | analyzers.extractor:extract_batch:301 - 开始批量抽取, 共8条, 并行数: 2
+2025-12-26 00:33:43.929 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 1): EXTRACTION
+2025-12-26 00:33:43.929 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 2): EXTRACTION
+2025-12-26 00:33:43.930 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 0): EXTRACTION
+2025-12-26 00:33:43.930 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 3): EXTRACTION
+2025-12-26 00:33:43.930 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 4): EXTRACTION
+2025-12-26 00:33:43.930 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 5): EXTRACTION
+2025-12-26 00:33:43.930 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 6): EXTRACTION
+2025-12-26 00:33:43.930 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 7): EXTRACTION
+2025-12-26 00:33:43.930 | INFO     | __main__:extract_info:488 - 信息抽取完成
+2025-12-26 00:33:43.931 | INFO     | __main__:analyze_trends:514 - ==================================================
+2025-12-26 00:33:43.931 | INFO     | __main__:analyze_trends:515 - 开始趋势分析阶段
+2025-12-26 00:33:43.931 | INFO     | __main__:analyze_trends:516 - ==================================================
+2025-12-26 00:33:43.931 | INFO     | utils.ollama_client:__init__:104 - OllamaClient初始化完成，服务地址: http://localhost:11434
+2025-12-26 00:33:43.931 | INFO     | analyzers.trend_analyzer:__init__:164 - TrendAnalyzer初始化完成, 模型: qwen3:4b
+2025-12-26 00:33:43.931 | INFO     | analyzers.trend_analyzer:analyze:198 - 开始趋势分析, 文章数: 148
+2025-12-26 00:35:47.440 | INFO     | __main__:__init__:144 - NewsAggregatorPipeline 初始化完成
+2025-12-26 00:35:47.441 | INFO     | __main__:run:599 - ============================================================
+2025-12-26 00:35:47.441 | INFO     | __main__:run:600 - 新闻聚合分析流水线启动 - 2025-12-26
+2025-12-26 00:35:47.441 | INFO     | __main__:run:601 - ============================================================
+2025-12-26 00:35:47.441 | INFO     | __main__:collect_data:198 - ==================================================
+2025-12-26 00:35:47.441 | INFO     | __main__:collect_data:199 - 开始数据采集阶段
+2025-12-26 00:35:47.441 | INFO     | __main__:collect_data:200 - ==================================================
+2025-12-26 00:35:47.441 | INFO     | __main__:collect_data:207 - 采集 HackerNews...
+2025-12-26 00:35:47.441 | INFO     | collectors.hackernews_collector:fetch_top_stories:423 - 获取 HN 热门故事 (limit=30)
+2025-12-26 00:35:49.276 | INFO     | collectors.hackernews_collector:fetch_stories:189 - 成功获取 30/30 个故事
+2025-12-26 00:35:49.277 | INFO     | __main__:collect_data:225 - HackerNews: 采集 30 条
+2025-12-26 00:35:49.277 | INFO     | __main__:collect_data:233 - 采集 RSS订阅...
+2025-12-26 00:35:49.277 | WARNING  | collectors.rss_collector:fetch_all:271 - 没有启用的 RSS 源
+2025-12-26 00:35:49.278 | INFO     | __main__:collect_data:250 - RSS: 采集 0 条
+2025-12-26 00:35:49.278 | INFO     | __main__:collect_data:258 - 采集 新浪财经直播...
+2025-12-26 00:35:49.278 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 7x24财经
+2025-12-26 00:35:49.278 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 7x24财经, 页码: 1
+2025-12-26 00:35:49.436 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 7x24财经 获取 20 条内容
+2025-12-26 00:35:49.939 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 7x24财经, 页码: 2
+2025-12-26 00:35:50.052 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 7x24财经 获取 20 条内容
+2025-12-26 00:35:50.558 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 期货直播
+2025-12-26 00:35:50.558 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 期货直播, 页码: 1
+2025-12-26 00:35:50.898 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 期货直播 获取 11 条内容
+2025-12-26 00:35:51.401 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 期货直播, 页码: 2
+2025-12-26 00:35:51.689 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 期货直播 获取 11 条内容
+2025-12-26 00:35:52.195 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 外汇直播
+2025-12-26 00:35:52.197 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 外汇直播, 页码: 1
+2025-12-26 00:35:52.721 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 外汇直播 获取 0 条内容
+2025-12-26 00:35:53.227 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 美股直播
+2025-12-26 00:35:53.230 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 美股直播, 页码: 1
+2025-12-26 00:35:53.584 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 美股直播 获取 1 条内容
+2025-12-26 00:35:54.090 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 美股直播, 页码: 2
+2025-12-26 00:35:54.318 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 美股直播 获取 1 条内容
+2025-12-26 00:35:54.824 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 港股直播
+2025-12-26 00:35:54.825 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 港股直播, 页码: 1
+2025-12-26 00:35:55.144 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 港股直播 获取 13 条内容
+2025-12-26 00:35:55.650 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 港股直播, 页码: 2
+2025-12-26 00:35:55.887 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 港股直播 获取 13 条内容
+2025-12-26 00:35:56.394 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 债券直播
+2025-12-26 00:35:56.395 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 债券直播, 页码: 1
+2025-12-26 00:35:56.638 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 债券直播 获取 14 条内容
+2025-12-26 00:35:57.143 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 债券直播, 页码: 2
+2025-12-26 00:35:57.364 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 债券直播 获取 14 条内容
+2025-12-26 00:35:57.870 | INFO     | collectors.sina_zhibo_collector:fetch_all_channels:401 - 获取频道: 基金直播
+2025-12-26 00:35:57.871 | INFO     | collectors.sina_zhibo_collector:fetch_feed:270 - 获取新浪财经直播: 基金直播, 页码: 1
+2025-12-26 00:35:58.079 | INFO     | collectors.sina_zhibo_collector:fetch_feed:333 - 从 基金直播 获取 0 条内容
+2025-12-26 00:35:58.586 | INFO     | __main__:collect_data:276 - 新浪财经: 采集 148 条
+2025-12-26 00:35:58.587 | INFO     | __main__:collect_data:282 - 数据采集完成, 总计: 148 条
+2025-12-26 00:35:58.600 | DEBUG    | utils.file_utils:save_json:757 - JSON已保存: cache/2025-12-26_raw_items.json
+2025-12-26 00:35:58.600 | INFO     | __main__:collect_data:288 - 原始数据已缓存: cache/2025-12-26_raw_items.json
+2025-12-26 00:35:58.600 | INFO     | __main__:extract_content:314 - ==================================================
+2025-12-26 00:35:58.600 | INFO     | __main__:extract_content:315 - 开始内容抽取阶段
+2025-12-26 00:35:58.600 | INFO     | __main__:extract_content:316 - ==================================================
+2025-12-26 00:35:58.601 | INFO     | __main__:extract_content:331 - 需要抽取全文: 62 条
+2025-12-26 00:36:33.667 | ERROR    | extractors.content_extractor:fetch_html:122 - 获取 HTML 失败 https://www.bbc.co.uk/news/articles/cdxwllqz1l0o: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2025-12-26 00:36:42.393 | INFO     | extractors.content_extractor:extract_batch:241 - 批量提取完成: 48/50 成功
+2025-12-26 00:36:42.393 | INFO     | __main__:extract_content:350 - 成功抽取全文: 48 条
+2025-12-26 00:36:42.394 | INFO     | __main__:classify_items:376 - ==================================================
+2025-12-26 00:36:42.394 | INFO     | __main__:classify_items:377 - 开始分类标注阶段
+2025-12-26 00:36:42.394 | INFO     | __main__:classify_items:378 - ==================================================
+2025-12-26 00:36:42.402 | INFO     | utils.ollama_client:__init__:104 - OllamaClient初始化完成，服务地址: http://localhost:11434
+2025-12-26 00:36:42.402 | INFO     | analyzers.classifier:__init__:213 - ContentClassifier初始化完成，模型: qwen2.5:0.5b
+2025-12-26 00:36:42.402 | INFO     | analyzers.classifier:classify_batch:492 - 开始批量分类，共 148 项
+2025-12-26 00:36:42.403 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 5521
+2025-12-26 00:36:59.812 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 1528
+2025-12-26 00:37:19.968 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 4087
+2025-12-26 00:37:34.015 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 7599
+2025-12-26 00:37:49.103 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 601
+2025-12-26 00:38:03.750 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 3871
+2025-12-26 00:38:15.421 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 6937
+2025-12-26 00:38:29.882 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 13137
+2025-12-26 00:38:48.126 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 5963
+2025-12-26 00:39:06.782 | INFO     | analyzers.classifier:classify_batch:502 - 分类进度: 10/148
+2025-12-26 00:39:06.783 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 1299
+2025-12-26 00:39:18.424 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 6878
+2025-12-26 00:39:33.004 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 585
+2025-12-26 00:39:44.088 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 1171
+2025-12-26 00:39:57.054 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 739
+2025-12-26 00:40:07.819 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 7425
+2025-12-26 00:40:21.695 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 4649
+2025-12-26 00:40:45.297 | INFO     | analyzers.classifier:classify_batch:502 - 分类进度: 20/148
+2025-12-26 00:40:45.299 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 1254
+2025-12-26 00:40:55.385 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 5928
+2025-12-26 00:41:09.984 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 896
+2025-12-26 00:41:22.632 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 3763
+2025-12-26 00:41:43.407 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 5398
+2025-12-26 00:41:54.667 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 2805
+2025-12-26 00:42:05.686 | INFO     | analyzers.classifier:classify_batch:502 - 分类进度: 30/148
+2025-12-26 00:42:05.686 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 907
+2025-12-26 00:42:18.538 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 896
+2025-12-26 00:42:29.135 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 717
+2025-12-26 00:42:42.716 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 657
+2025-12-26 00:42:56.585 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 669
+2025-12-26 00:43:10.516 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 885
+2025-12-26 00:43:22.102 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 712
+2025-12-26 00:43:36.265 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 669
+2025-12-26 00:43:47.001 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 677
+2025-12-26 00:44:00.169 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 681
+2025-12-26 00:44:13.349 | INFO     | analyzers.classifier:classify_batch:502 - 分类进度: 40/148
+2025-12-26 00:44:13.350 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 805
+2025-12-26 00:44:25.298 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 673
+2025-12-26 00:44:37.600 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 690
+2025-12-26 00:44:50.551 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 1518
+2025-12-26 00:45:01.492 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 689
+2025-12-26 00:45:14.448 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 742
+2025-12-26 00:45:29.167 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 723
+2025-12-26 00:45:42.280 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 811
+2025-12-26 00:45:55.032 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 763
+2025-12-26 00:46:07.024 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 1425
+2025-12-26 00:47:07.033 | WARNING  | utils.ollama_client:_make_request:157 - 请求失败 (尝试 1/2): HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=60)
+2025-12-26 00:47:26.177 | INFO     | analyzers.classifier:classify_batch:502 - 分类进度: 50/148
+2025-12-26 00:47:26.178 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 709
+2025-12-26 00:47:40.269 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 725
+2025-12-26 00:47:54.604 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 862
+2025-12-26 00:48:08.239 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 854
+2025-12-26 00:48:21.238 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 812
+2025-12-26 00:48:33.232 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 562
+2025-12-26 00:48:46.042 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 709
+2025-12-26 00:49:03.050 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 546
+2025-12-26 00:49:13.097 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 537
+2025-12-26 00:49:25.515 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 619
+2025-12-26 00:49:34.852 | INFO     | analyzers.classifier:classify_batch:502 - 分类进度: 60/148
+2025-12-26 00:49:34.853 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 759
+2025-12-26 00:49:48.266 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 586
+2025-12-26 00:50:03.232 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 771
+2025-12-26 00:50:13.241 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 820
+2025-12-26 00:50:28.251 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 940
+2025-12-26 00:50:41.866 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 895
+2025-12-26 00:50:54.469 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 1043
+2025-12-26 00:51:17.521 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 562
+2025-12-26 00:51:28.249 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 751
+2025-12-26 00:51:44.448 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 755
+2025-12-26 00:51:57.082 | INFO     | analyzers.classifier:classify_batch:502 - 分类进度: 70/148
+2025-12-26 00:51:57.083 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 535
+2025-12-26 00:52:11.013 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 448
+2025-12-26 00:52:21.930 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 611
+2025-12-26 00:52:34.646 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 452
+2025-12-26 00:52:46.462 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 526
+2025-12-26 00:52:58.215 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 446
+2025-12-26 00:53:08.314 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 474
+2025-12-26 00:53:17.831 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 514
+2025-12-26 00:53:28.524 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 460
+2025-12-26 00:53:40.561 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 594
+2025-12-26 00:53:52.777 | INFO     | analyzers.classifier:classify_batch:502 - 分类进度: 80/148
+2025-12-26 00:53:52.778 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 506
+2025-12-26 00:54:05.046 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 784858
+2025-12-26 00:54:05.047 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 784857
+2025-12-26 00:54:05.047 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 784856
+2025-12-26 00:54:05.047 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 784855
+2025-12-26 00:54:05.047 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 784854
+2025-12-26 00:54:05.047 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 784853
+2025-12-26 00:54:05.047 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 784852
+2025-12-26 00:54:05.048 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 784846
+2025-12-26 00:54:05.048 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 784843
+2025-12-26 00:54:05.048 | INFO     | analyzers.classifier:classify_batch:502 - 分类进度: 90/148
+2025-12-26 00:54:05.048 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 784841
+2025-12-26 00:54:05.048 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 784840
+2025-12-26 00:54:05.048 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 436
+2025-12-26 00:54:14.347 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 737114
+2025-12-26 00:54:14.348 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 548
+2025-12-26 00:54:28.097 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 585
+2025-12-26 00:54:42.065 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 466
+2025-12-26 00:54:52.714 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 502
+2025-12-26 00:55:04.846 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 555
+2025-12-26 00:55:16.981 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 579
+2025-12-26 00:55:30.514 | INFO     | analyzers.classifier:classify_batch:502 - 分类进度: 100/148
+2025-12-26 00:55:30.516 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 594
+2025-12-26 00:55:41.162 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 460
+2025-12-26 00:55:53.959 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 448
+2025-12-26 00:56:07.224 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 442
+2025-12-26 00:56:18.045 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 597
+2025-12-26 00:56:30.966 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 618
+2025-12-26 00:56:43.319 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 605
+2025-12-26 00:56:56.644 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 758337
+2025-12-26 00:56:56.645 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 758336
+2025-12-26 00:56:56.645 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 758334
+2025-12-26 00:56:56.645 | INFO     | analyzers.classifier:classify_batch:502 - 分类进度: 110/148
+2025-12-26 00:56:56.646 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 758332
+2025-12-26 00:56:56.646 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 758331
+2025-12-26 00:56:56.646 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 758330
+2025-12-26 00:56:56.646 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 758328
+2025-12-26 00:56:56.647 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 758324
+2025-12-26 00:56:56.647 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 758323
+2025-12-26 00:56:56.647 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 758322
+2025-12-26 00:56:56.647 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 758320
+2025-12-26 00:56:56.647 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 758319
+2025-12-26 00:56:56.647 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 758318
+2025-12-26 00:56:56.647 | INFO     | analyzers.classifier:classify_batch:502 - 分类进度: 120/148
+2025-12-26 00:56:56.648 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 560
+2025-12-26 00:57:11.088 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 535
+2025-12-26 00:57:22.928 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 569
+2025-12-26 00:57:34.594 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 607
+2025-12-26 00:57:48.264 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 608
+2025-12-26 00:58:02.130 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 655
+2025-12-26 00:58:13.610 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 636
+2025-12-26 00:58:26.444 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 618
+2025-12-26 00:58:39.730 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 464
+2025-12-26 00:58:51.361 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 464
+2025-12-26 00:59:06.206 | INFO     | analyzers.classifier:classify_batch:502 - 分类进度: 130/148
+2025-12-26 00:59:06.207 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 460
+2025-12-26 00:59:20.114 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 588
+2025-12-26 00:59:32.317 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 609
+2025-12-26 00:59:43.283 | DEBUG    | utils.ollama_client:generate:334 - 生成请求 - 模型: qwen2.5:0.5b, prompt长度: 616
+2025-12-26 00:59:54.645 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 753806
+2025-12-26 00:59:54.646 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 753805
+2025-12-26 00:59:54.646 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 753804
+2025-12-26 00:59:54.646 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 753800
+2025-12-26 00:59:54.647 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 753798
+2025-12-26 00:59:54.647 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 753796
+2025-12-26 00:59:54.647 | INFO     | analyzers.classifier:classify_batch:502 - 分类进度: 140/148
+2025-12-26 00:59:54.647 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 753795
+2025-12-26 00:59:54.647 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 753794
+2025-12-26 00:59:54.647 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 753793
+2025-12-26 00:59:54.647 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 753792
+2025-12-26 00:59:54.647 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 753791
+2025-12-26 00:59:54.647 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 753790
+2025-12-26 00:59:54.647 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 753789
+2025-12-26 00:59:54.647 | DEBUG    | analyzers.classifier:classify:367 - 缓存命中: 753788
+2025-12-26 00:59:54.648 | INFO     | analyzers.classifier:classify_batch:514 - 分类完成，分布: {'big_tech': 28, 'data_science': 77, 'other': 22, 'programming': 8, 'ai_ml': 1, 'market': 12}
+2025-12-26 00:59:54.649 | INFO     | analyzers.classifier:classify_batch:515 - 重要性分布: {4: 120, 3: 28}
+2025-12-26 00:59:54.650 | INFO     | __main__:classify_items:401 - 分类完成: 148 条
+2025-12-26 00:59:54.650 | INFO     | __main__:extract_info:456 - ==================================================
+2025-12-26 00:59:54.650 | INFO     | __main__:extract_info:457 - 开始信息抽取阶段
+2025-12-26 00:59:54.650 | INFO     | __main__:extract_info:458 - ==================================================
+2025-12-26 00:59:54.656 | INFO     | utils.ollama_client:__init__:104 - OllamaClient初始化完成，服务地址: http://localhost:11434
+2025-12-26 00:59:54.656 | INFO     | analyzers.extractor:__init__:139 - ContentExtractorLLM初始化完成, 模型: qwen3:4b
+2025-12-26 00:59:54.656 | INFO     | __main__:extract_info:469 - 高重要性文章: 120 条
+2025-12-26 00:59:54.656 | INFO     | analyzers.extractor:extract_batch:301 - 开始批量抽取, 共120条, 并行数: 2
+2025-12-26 00:59:54.660 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 0): EXTRACTION
+2025-12-26 00:59:54.661 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 1): EXTRACTION
+2025-12-26 00:59:54.664 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 2): EXTRACTION
+2025-12-26 00:59:54.664 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 3): EXTRACTION
+2025-12-26 00:59:54.665 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 4): EXTRACTION
+2025-12-26 00:59:54.665 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 5): EXTRACTION
+2025-12-26 00:59:54.665 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 6): EXTRACTION
+2025-12-26 00:59:54.665 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 7): EXTRACTION
+2025-12-26 00:59:54.665 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 8): EXTRACTION
+2025-12-26 00:59:54.665 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 9): EXTRACTION
+2025-12-26 00:59:54.665 | INFO     | analyzers.extractor:extract_batch:331 - 抽取进度: 10/120
+2025-12-26 00:59:54.665 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 10): EXTRACTION
+2025-12-26 00:59:54.665 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 11): EXTRACTION
+2025-12-26 00:59:54.665 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 12): EXTRACTION
+2025-12-26 00:59:54.665 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 13): EXTRACTION
+2025-12-26 00:59:54.666 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 14): EXTRACTION
+2025-12-26 00:59:54.666 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 15): EXTRACTION
+2025-12-26 00:59:54.666 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 16): EXTRACTION
+2025-12-26 00:59:54.666 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 17): EXTRACTION
+2025-12-26 00:59:54.666 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 18): EXTRACTION
+2025-12-26 00:59:54.666 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 19): EXTRACTION
+2025-12-26 00:59:54.666 | INFO     | analyzers.extractor:extract_batch:331 - 抽取进度: 20/120
+2025-12-26 00:59:54.666 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 20): EXTRACTION
+2025-12-26 00:59:54.666 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 21): EXTRACTION
+2025-12-26 00:59:54.666 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 22): EXTRACTION
+2025-12-26 00:59:54.666 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 23): EXTRACTION
+2025-12-26 00:59:54.666 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 24): EXTRACTION
+2025-12-26 00:59:54.666 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 25): EXTRACTION
+2025-12-26 00:59:54.667 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 26): EXTRACTION
+2025-12-26 00:59:54.667 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 27): EXTRACTION
+2025-12-26 00:59:54.667 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 28): EXTRACTION
+2025-12-26 00:59:54.667 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 29): EXTRACTION
+2025-12-26 00:59:54.667 | INFO     | analyzers.extractor:extract_batch:331 - 抽取进度: 30/120
+2025-12-26 00:59:54.667 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 30): EXTRACTION
+2025-12-26 00:59:54.667 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 31): EXTRACTION
+2025-12-26 00:59:54.667 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 32): EXTRACTION
+2025-12-26 00:59:54.667 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 33): EXTRACTION
+2025-12-26 00:59:54.667 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 34): EXTRACTION
+2025-12-26 00:59:54.667 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 35): EXTRACTION
+2025-12-26 00:59:54.667 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 36): EXTRACTION
+2025-12-26 00:59:54.667 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 37): EXTRACTION
+2025-12-26 00:59:54.667 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 38): EXTRACTION
+2025-12-26 00:59:54.667 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 39): EXTRACTION
+2025-12-26 00:59:54.668 | INFO     | analyzers.extractor:extract_batch:331 - 抽取进度: 40/120
+2025-12-26 00:59:54.668 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 40): EXTRACTION
+2025-12-26 00:59:54.668 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 41): EXTRACTION
+2025-12-26 00:59:54.668 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 42): EXTRACTION
+2025-12-26 00:59:54.668 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 43): EXTRACTION
+2025-12-26 00:59:54.668 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 44): EXTRACTION
+2025-12-26 00:59:54.668 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 45): EXTRACTION
+2025-12-26 00:59:54.668 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 46): EXTRACTION
+2025-12-26 00:59:54.668 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 47): EXTRACTION
+2025-12-26 00:59:54.668 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 48): EXTRACTION
+2025-12-26 00:59:54.668 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 49): EXTRACTION
+2025-12-26 00:59:54.668 | INFO     | analyzers.extractor:extract_batch:331 - 抽取进度: 50/120
+2025-12-26 00:59:54.668 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 50): EXTRACTION
+2025-12-26 00:59:54.669 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 51): EXTRACTION
+2025-12-26 00:59:54.669 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 52): EXTRACTION
+2025-12-26 00:59:54.669 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 53): EXTRACTION
+2025-12-26 00:59:54.669 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 54): EXTRACTION
+2025-12-26 00:59:54.669 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 55): EXTRACTION
+2025-12-26 00:59:54.669 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 56): EXTRACTION
+2025-12-26 00:59:54.669 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 57): EXTRACTION
+2025-12-26 00:59:54.669 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 58): EXTRACTION
+2025-12-26 00:59:54.669 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 59): EXTRACTION
+2025-12-26 00:59:54.669 | INFO     | analyzers.extractor:extract_batch:331 - 抽取进度: 60/120
+2025-12-26 00:59:54.670 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 60): EXTRACTION
+2025-12-26 00:59:54.670 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 61): EXTRACTION
+2025-12-26 00:59:54.670 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 62): EXTRACTION
+2025-12-26 00:59:54.670 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 63): EXTRACTION
+2025-12-26 00:59:54.670 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 64): EXTRACTION
+2025-12-26 00:59:54.670 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 65): EXTRACTION
+2025-12-26 00:59:54.670 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 66): EXTRACTION
+2025-12-26 00:59:54.670 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 67): EXTRACTION
+2025-12-26 00:59:54.670 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 68): EXTRACTION
+2025-12-26 00:59:54.670 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 69): EXTRACTION
+2025-12-26 00:59:54.670 | INFO     | analyzers.extractor:extract_batch:331 - 抽取进度: 70/120
+2025-12-26 00:59:54.670 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 70): EXTRACTION
+2025-12-26 00:59:54.671 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 71): EXTRACTION
+2025-12-26 00:59:54.671 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 72): EXTRACTION
+2025-12-26 00:59:54.671 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 73): EXTRACTION
+2025-12-26 00:59:54.671 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 74): EXTRACTION
+2025-12-26 00:59:54.671 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 75): EXTRACTION
+2025-12-26 00:59:54.671 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 76): EXTRACTION
+2025-12-26 00:59:54.671 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 77): EXTRACTION
+2025-12-26 00:59:54.671 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 78): EXTRACTION
+2025-12-26 00:59:54.671 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 79): EXTRACTION
+2025-12-26 00:59:54.671 | INFO     | analyzers.extractor:extract_batch:331 - 抽取进度: 80/120
+2025-12-26 00:59:54.671 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 80): EXTRACTION
+2025-12-26 00:59:54.671 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 81): EXTRACTION
+2025-12-26 00:59:54.671 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 82): EXTRACTION
+2025-12-26 00:59:54.671 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 83): EXTRACTION
+2025-12-26 00:59:54.672 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 84): EXTRACTION
+2025-12-26 00:59:54.672 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 85): EXTRACTION
+2025-12-26 00:59:54.672 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 86): EXTRACTION
+2025-12-26 00:59:54.672 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 87): EXTRACTION
+2025-12-26 00:59:54.672 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 88): EXTRACTION
+2025-12-26 00:59:54.672 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 89): EXTRACTION
+2025-12-26 00:59:54.672 | INFO     | analyzers.extractor:extract_batch:331 - 抽取进度: 90/120
+2025-12-26 00:59:54.672 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 90): EXTRACTION
+2025-12-26 00:59:54.672 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 91): EXTRACTION
+2025-12-26 00:59:54.672 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 92): EXTRACTION
+2025-12-26 00:59:54.672 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 93): EXTRACTION
+2025-12-26 00:59:54.672 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 94): EXTRACTION
+2025-12-26 00:59:54.672 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 95): EXTRACTION
+2025-12-26 00:59:54.672 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 96): EXTRACTION
+2025-12-26 00:59:54.672 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 97): EXTRACTION
+2025-12-26 00:59:54.673 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 98): EXTRACTION
+2025-12-26 00:59:54.673 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 99): EXTRACTION
+2025-12-26 00:59:54.673 | INFO     | analyzers.extractor:extract_batch:331 - 抽取进度: 100/120
+2025-12-26 00:59:54.673 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 100): EXTRACTION
+2025-12-26 00:59:54.673 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 101): EXTRACTION
+2025-12-26 00:59:54.673 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 102): EXTRACTION
+2025-12-26 00:59:54.673 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 103): EXTRACTION
+2025-12-26 00:59:54.673 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 104): EXTRACTION
+2025-12-26 00:59:54.673 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 105): EXTRACTION
+2025-12-26 00:59:54.673 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 106): EXTRACTION
+2025-12-26 00:59:54.673 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 107): EXTRACTION
+2025-12-26 00:59:54.673 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 108): EXTRACTION
+2025-12-26 00:59:54.673 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 109): EXTRACTION
+2025-12-26 00:59:54.673 | INFO     | analyzers.extractor:extract_batch:331 - 抽取进度: 110/120
+2025-12-26 00:59:54.673 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 110): EXTRACTION
+2025-12-26 00:59:54.674 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 111): EXTRACTION
+2025-12-26 00:59:54.674 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 112): EXTRACTION
+2025-12-26 00:59:54.674 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 113): EXTRACTION
+2025-12-26 00:59:54.674 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 114): EXTRACTION
+2025-12-26 00:59:54.674 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 115): EXTRACTION
+2025-12-26 00:59:54.674 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 116): EXTRACTION
+2025-12-26 00:59:54.674 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 117): EXTRACTION
+2025-12-26 00:59:54.674 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 118): EXTRACTION
+2025-12-26 00:59:54.674 | ERROR    | analyzers.extractor:extract_batch:326 - 批量抽取异常 (索引 119): EXTRACTION
+2025-12-26 00:59:54.674 | INFO     | analyzers.extractor:extract_batch:331 - 抽取进度: 120/120
+2025-12-26 00:59:54.675 | INFO     | __main__:extract_info:488 - 信息抽取完成
+2025-12-26 00:59:54.675 | INFO     | __main__:analyze_trends:514 - ==================================================
+2025-12-26 00:59:54.675 | INFO     | __main__:analyze_trends:515 - 开始趋势分析阶段
+2025-12-26 00:59:54.675 | INFO     | __main__:analyze_trends:516 - ==================================================
+2025-12-26 00:59:54.675 | INFO     | utils.ollama_client:__init__:104 - OllamaClient初始化完成，服务地址: http://localhost:11434
+2025-12-26 00:59:54.675 | INFO     | analyzers.trend_analyzer:__init__:164 - TrendAnalyzer初始化完成, 模型: qwen3:4b
+2025-12-26 00:59:54.676 | INFO     | analyzers.trend_analyzer:analyze:198 - 开始趋势分析, 文章数: 148
+2025-12-26 00:59:54.703 | ERROR    | __main__:run:656 - 流水线异常: ['Traceback (most recent call last):\n', '  File "/Users/mx/Desktop/news_aggregator/main.py", line 644, in run\n    self.analyze_trends()\n', '  File "/Users/mx/Desktop/news_aggregator/main.py", line 520, in analyze_trends\n    self.trend_report = analyzer.analyze(\n                        ^^^^^^^^^^^^^^^^^\n', '  File "/Users/mx/Desktop/news_aggregator/analyzers/trend_analyzer.py", line 217, in analyze\n    self._llm_deep_analysis(articles, report)\n', '  File "/Users/mx/Desktop/news_aggregator/analyzers/trend_analyzer.py", line 479, in _llm_deep_analysis\n    user_prompt = prompt_template.format(\n                  ^^^^^^^^^^^^^^^^^^^^^^^\n', "KeyError: 'time_range'\n"]
+2025-12-26 00:59:54.703 | INFO     | __main__:run:665 - ============================================================
+2025-12-26 00:59:54.703 | INFO     | __main__:run:666 - 流水线完成 - 耗时: 1447.3秒
+2025-12-26 00:59:54.703 | INFO     | __main__:run:667 - 结果: 失败
+2025-12-26 00:59:54.704 | INFO     | __main__:run:668 - ============================================================
+2025-12-26 00:59:54.704 | DEBUG    | utils.file_utils:save_json:757 - JSON已保存: outputs/2025-12-26_pipeline_result.json
+2025-12-26 00:59:54.704 | INFO     | __main__:main:788 - 流水线完成: {'date': '2025-12-26', 'start_time': '2025-12-26T00:35:47.441002', 'stages': {'collect': {'status': 'done', 'count': 148}, 'extract_content': {'status': 'done'}, 'classify': {'status': 'done'}, 'extract_info': {'status': 'done'}}, 'reports': {}, 'success': False, 'error': '[\'Traceback (most recent call last):\\n\', \'  File "/Users/mx/Desktop/news_aggregator/main.py", line 644, in run\\n    self.analyze_trends()\\n\', \'  File "/Users/mx/Desktop/news_aggregator/main.py", line 520, in analyze_trends\\n    self.trend_report = analyzer.analyze(\\n                        ^^^^^^^^^^^^^^^^^\\n\', \'  File "/Users/mx/Desktop/news_aggregator/analyzers/trend_analyzer.py", line 217, in analyze\\n    self._llm_deep_analysis(articles, report)\\n\', \'  File "/Users/mx/Desktop/news_aggregator/analyzers/trend_analyzer.py", line 479, in _llm_deep_analysis\\n    user_prompt = prompt_template.format(\\n                  ^^^^^^^^^^^^^^^^^^^^^^^\\n\', "KeyError: \'time_range\'\\n"]', 'end_time': '2025-12-26T00:59:54.703825', 'duration_seconds': 1447.262823}

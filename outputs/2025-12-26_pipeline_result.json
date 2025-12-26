@@ -1,0 +1,24 @@
+{
+  "date": "2025-12-26",
+  "start_time": "2025-12-26T00:35:47.441002",
+  "stages": {
+    "collect": {
+      "status": "done",
+      "count": 148
+    },
+    "extract_content": {
+      "status": "done"
+    },
+    "classify": {
+      "status": "done"
+    },
+    "extract_info": {
+      "status": "done"
+    }
+  },
+  "reports": {},
+  "success": false,
+  "error": "['Traceback (most recent call last):\\n', '  File \"/Users/mx/Desktop/news_aggregator/main.py\", line 644, in run\\n    self.analyze_trends()\\n', '  File \"/Users/mx/Desktop/news_aggregator/main.py\", line 520, in analyze_trends\\n    self.trend_report = analyzer.analyze(\\n                        ^^^^^^^^^^^^^^^^^\\n', '  File \"/Users/mx/Desktop/news_aggregator/analyzers/trend_analyzer.py\", line 217, in analyze\\n    self._llm_deep_analysis(articles, report)\\n', '  File \"/Users/mx/Desktop/news_aggregator/analyzers/trend_analyzer.py\", line 479, in _llm_deep_analysis\\n    user_prompt = prompt_template.format(\\n                  ^^^^^^^^^^^^^^^^^^^^^^^\\n', \"KeyError: 'time_range'\\n\"]",
+  "end_time": "2025-12-26T00:59:54.703825",
+  "duration_seconds": 1447.262823
+}
