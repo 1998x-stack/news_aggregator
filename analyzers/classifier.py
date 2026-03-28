@@ -31,14 +31,13 @@ from loguru import logger
 import os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from utils.dashscope_client import DashScopeClient, get_dashscope_client, OllamaConfig, OllamaModel
+from utils.dashscope_client import DashScopeClient, get_dashscope_client
 from config.settings import (
     ContentCategory, 
     ImportanceLevel, 
     CATEGORY_KEYWORDS,
     IMPORTANCE_BOOST_KEYWORDS,
     IMPORTANCE_PENALTY_KEYWORDS,
-    OllamaModelConfig
 )
 from prompts.llm_prompts import get_prompt, PromptType, get_prompt_template
 
@@ -183,13 +182,13 @@ class ContentClassifier:
     """
     
     # 分类模型配置
-    DEFAULT_MODEL = OllamaModel.QWEN_0_5B.value
+    DEFAULT_MODEL = "qwen-max"
     DEFAULT_TEMPERATURE = 0.1  # 低温度保证一致性
     DEFAULT_MAX_TOKENS = 512
     
     def __init__(
         self,
-        ollama_client: Optional[OllamaClient] = None,
+        dashscope_client: Optional[DashScopeClient] = None,
         use_rules_first: bool = True,
         cache_enabled: bool = True
     ):
@@ -212,16 +211,10 @@ class ContentClassifier:
         
         logger.info(f"ContentClassifier初始化完成，模型: {self.DEFAULT_MODEL}")
     
-    def _create_client(self) -> OllamaClient:
+    def _create_client(self) -> DashScopeClient:
         """创建Ollama客户端"""
-        config = OllamaConfig(
-            timeout=60,
-            max_retries=2,
-            default_model=self.DEFAULT_MODEL,
-            default_temperature=self.DEFAULT_TEMPERATURE,
-            default_max_tokens=self.DEFAULT_MAX_TOKENS
-        )
-        return OllamaClient(config)
+        config = type("Config", (), {"default_model": "qwen-max", "temperature": 0.3, "max_tokens": 2000})()
+        return get_dashscope_client()
     
     def _build_system_prompt(self) -> str:
         """构建系统提示词"""
@@ -636,21 +629,10 @@ def create_classifier(
     Returns:
         ContentClassifier: 分类器实例
     """
-    config = OllamaConfig(
-        base_url=ollama_base_url,
-        timeout=60,
-        max_retries=2,
-        default_model=OllamaModel.QWEN_0_5B.value,
-        default_temperature=0.1,
-        default_max_tokens=512
-    )
-    client = OllamaClient(config)
+    config = type("Config", (), {"default_model": "qwen-max", "temperature": 0.3, "max_tokens": 2000})()
+    client = get_dashscope_client()
     
-    return ContentClassifier(
-        ollama_client=client,
-        use_rules_first=use_rules_first,
-        cache_enabled=cache_enabled
-    )
+    return ContentClassifier(dashscope_client=client, use_rules_first=use_rules_first, cache_enabled=cache_enabled)
 
 
 if __name__ == "__main__":

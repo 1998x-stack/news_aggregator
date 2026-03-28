@@ -29,7 +29,7 @@ from loguru import logger
 # 添加项目根目录到路径
 sys.path.insert(0, 'news_aggregator')
 
-from utils.dashscope_client import DashScopeClient, get_dashscope_client, OllamaConfig
+from utils.dashscope_client import DashScopeClient, get_dashscope_client
 from prompts.llm_prompts import get_prompt, PromptType
 from config.settings import LLMSettings
 
@@ -129,11 +129,7 @@ class ContentExtractorLLM:
         self.model = model or LLMSettings.EXTRACTOR_MODEL
         self.max_retries = max_retries
         
-        config = OllamaConfig(
-            base_url=base_url,
-            timeout=timeout,
-            default_model=self.model
-        )
+        config = type("Config", (), {"default_model": "qwen-max", "temperature": 0.3, "max_tokens": 2000})()
         self.client = OllamaClient(config)
         
         logger.info(f"ContentExtractorLLM初始化完成, 模型: {self.model}")

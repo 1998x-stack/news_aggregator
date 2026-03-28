@@ -1,0 +1,18 @@
+{
+  "date": "2026-03-29",
+  "start_time": "2026-03-29T02:45:30.697222",
+  "stages": {
+    "collect": {
+      "status": "done",
+      "count": 30
+    },
+    "extract_content": {
+      "status": "done"
+    }
+  },
+  "reports": {},
+  "success": false,
+  "error": "['Traceback (most recent call last):\\n', '  File \"/Users/mx/Desktop/series/项目系列/news_aggregator/main.py\", line 636, in run\\n    self.classify_items()\\n    ~~~~~~~~~~~~~~~~~~~^^\\n', '  File \"/Users/mx/Desktop/series/项目系列/news_aggregator/main.py\", line 385, in classify_items\\n    classifier = self._get_classifier()\\n', '  File \"/Users/mx/Desktop/series/项目系列/news_aggregator/main.py\", line 170, in _get_classifier\\n    self._classifier = create_classifier()\\n                       ~~~~~~~~~~~~~~~~~^^\\n', '  File \"/Users/mx/Desktop/series/项目系列/news_aggregator/analyzers/classifier.py\", line 635, in create_classifier\\n    return ContentClassifier(\\n        ollama_client=client,\\n        use_rules_first=use_rules_first,\\n        cache_enabled=cache_enabled\\n    )\\n', \"TypeError: ContentClassifier.__init__() got an unexpected keyword argument 'ollama_client'\\n\"]",
+  "end_time": "2026-03-29T02:47:00.575726",
+  "duration_seconds": 89.878504
+}
