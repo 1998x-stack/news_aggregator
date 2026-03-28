@@ -1,0 +1,176 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: news-aggregator-postgres
+    environment:
+      POSTGRES_DB: news_aggregator
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - news-aggregator-network
+
+  # Redis Cache and Message Broker
+  redis:
+    image: redis:7-alpine
+    container_name: news-aggregator-redis
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_data:/data
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - news-aggregator-network
+
+  # Ollama for LLM processing
+  ollama:
+    image: ollama/ollama:latest
+    container_name: news-aggregator-ollama
+    volumes:
+      - ollama_data:/root/.ollama
+    ports:
+      - "11434:11434"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:11434/api/tags"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    networks:
+      - news-aggregator-network
+
+  # API Service
+  api:
+    build: .
+    container_name: news-aggregator-api
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: news_aggregator
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      REDIS_DB: 0
+      OLLAMA_HOST: ollama
+      OLLAMA_PORT: 11434
+      API_HOST: 0.0.0.0
+      API_PORT: 8000
+      LOG_LEVEL: INFO
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      ollama:
+        condition: service_healthy
+    volumes:
+      - ./outputs:/app/outputs
+      - ./cache:/app/cache
+      - ./logs:/app/logs
+      - ./data:/app/data
+    networks:
+      - news-aggregator-network
+
+  # Celery Worker
+  celery-worker:
+    build: .
+    container_name: news-aggregator-celery
+    command: celery -A tasks.celery_app worker --loglevel=info --concurrency=4
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: news_aggregator
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      REDIS_DB: 0
+      OLLAMA_HOST: ollama
+      OLLAMA_PORT: 11434
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      ollama:
+        condition: service_healthy
+    volumes:
+      - ./outputs:/app/outputs
+      - ./cache:/app/cache
+      - ./logs:/app/logs
+      - ./data:/app/data
+    networks:
+      - news-aggregator-network
+
+  # Celery Beat (Scheduler)
+  celery-beat:
+    build: .
+    container_name: news-aggregator-beat
+    command: celery -A tasks.celery_app beat --loglevel=info
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: news_aggregator
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      REDIS_DB: 0
+      OLLAMA_HOST: ollama
+      OLLAMA_PORT: 11434
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      ollama:
+        condition: service_healthy
+    volumes:
+      - ./outputs:/app/outputs
+      - ./cache:/app/cache
+      - ./logs:/app/logs
+      - ./data:/app/data
+    networks:
+      - news-aggregator-network
+
+  # Flower (Celery Monitoring)
+  flower:
+    image: mher/flower:latest
+    container_name: news-aggregator-flower
+    environment:
+      CELERY_BROKER_URL: redis://redis:6379/0
+      CELERY_RESULT_BACKEND: redis://redis:6379/0
+    ports:
+      - "5555:5555"
+    depends_on:
+      - redis
+    networks:
+      - news-aggregator-network
+
+volumes:
+  postgres_data:
+  redis_data:
+  ollama_data:
+
+networks:
+  news-aggregator-network:
+    driver: bridge

@@ -18,8 +18,29 @@ loguru>=0.7.0
 # 数据处理
 python-dateutil>=2.8.0
 
+# 数据库
+sqlalchemy>=2.0.0
+psycopg2-binary>=2.9.0
+
+# Redis缓存
+redis>=4.5.0
+
+# FastAPI Web框架
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+pydantic>=2.0.0
+
+# 任务队列
+celery>=5.3.0
+
+# 监控
+prometheus-client>=0.19.0
+
+# 环境变量管理
+python-dotenv>=1.0.0
+
 # 可选: 中文分词 (用于更好的关键词提取)
-# jieba>=0.42.0
+# jieba>=0.42.1
 
 # 可选: 异步支持
 # aiohttp>=3.8.0
