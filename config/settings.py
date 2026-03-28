@@ -341,6 +341,27 @@ LOG_CONFIG = {
 # ============================================================
 
 @dataclass
+@dataclass
+class DashScopeConfig:
+    """DashScope 服务配置"""
+    
+    # API配置
+    api_key: str = ""
+    base_url: str = "https://dashscope.aliyuncs.com/api/v1"
+    
+    # 默认模型
+    default_model: str = "qwen-max"
+    
+    # 温度参数
+    temperature: float = 0.3
+    
+    # 最大token数
+    max_tokens: int = 2000
+    
+    # 请求超时
+    timeout: int = 60
+
+
 class SystemConfig:
     """系统配置汇总"""
     paths: PathConfig = field(default_factory=PathConfig)
