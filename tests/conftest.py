@@ -19,7 +19,7 @@ def mock_ollama_response():
     """Mock Ollama API response"""
 
     def _create_response(content, success=True):
-        return {"response": content, "success": success, "model": "qwen3:4b"}
+        return {"response": content, "success": success, "model": "qwen-max"}
 
     return _create_response
 

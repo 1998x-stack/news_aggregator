@@ -103,7 +103,7 @@ class TestContentExtractorLLM:
 
     def test_extract_info_invalid_json(self, mock_ollama_client):
         """Test handling of invalid JSON from LLM"""
-        mock_ollama_client.generate = Mock(
+        mock_dashscope_client.generate = Mock(
             return_value={"response": "This is not valid JSON"}
         )
 
@@ -232,7 +232,7 @@ class TestExecutiveSummarizer:
 
         # Mock the LLM response
         summarizer.ollama_client = Mock()
-        summarizer.ollama_client.generate = Mock(
+        summarizer.dashscope_client.generate = Mock(
             return_value={
                 "response": json.dumps(
                     {
@@ -277,7 +277,7 @@ class TestExecutiveSummarizer:
 
         # Mock LLM to raise an exception
         summarizer.ollama_client = Mock()
-        summarizer.ollama_client.generate = Mock(
+        summarizer.dashscope_client.generate = Mock(
             side_effect=Exception("LLM service unavailable")
         )
 

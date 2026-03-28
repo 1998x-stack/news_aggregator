@@ -210,7 +210,7 @@ def deliver_report(self, report_id: int, delivery_method: str = "email", recipie
             raise Exception(f"Unsupported delivery method: {delivery_method}")
         
         if success:
-                        with db_manager.get_session() as session:
+            with db_manager.get_session() as session:
                 report = session.query(Report).filter(Report.id == report_id).first()
                 report.is_delivered = True
             

@@ -230,7 +230,7 @@ class OllamaModelConfig:
 OLLAMA_MODELS = {
     "classifier": OllamaModelConfig(
         name="分类模型",
-        model_id="qwen2.5:0.5b",
+        model_id="qwen-max",
         purpose="内容分类和重要性评估",
         temperature=0.1,
         max_tokens=512,
@@ -238,7 +238,7 @@ OLLAMA_MODELS = {
     ),
     "extractor": OllamaModelConfig(
         name="提取模型", 
-        model_id="qwen3:4b",
+        model_id="qwen-max",
         purpose="5W2H 信息提取和摘要生成",
         temperature=0.3,
         max_tokens=2048,
@@ -344,7 +344,7 @@ LOG_CONFIG = {
 class SystemConfig:
     """系统配置汇总"""
     paths: PathConfig = field(default_factory=PathConfig)
-    ollama: OllamaConfig = field(default_factory=OllamaConfig)
+    dashscope: DashScopeConfig = field(default_factory=DashScopeConfig)
     report: ReportConfig = field(default_factory=ReportConfig)
     
     # 全局设置
@@ -416,16 +416,16 @@ IMPORTANCE_PENALTY_KEYWORDS: List[str] = [
 class LLMSettings:
     """LLM模型设置"""
     # 分类模型 - 使用小模型，快速分类
-    CLASSIFIER_MODEL: str = "qwen2.5:0.5b"
+    CLASSIFIER_MODEL: str = "qwen-max"
     CLASSIFIER_TEMPERATURE: float = 0.1
     CLASSIFIER_MAX_TOKENS: int = 512
     
     # 抽取模型 - 使用较大模型，深度理解
-    EXTRACTOR_MODEL: str = "qwen3:4b"
+    EXTRACTOR_MODEL: str = "qwen-max"
     EXTRACTOR_TEMPERATURE: float = 0.3
     EXTRACTOR_MAX_TOKENS: int = 2048
     
-    # Ollama服务配置
+    # DashScope服务配置
     OLLAMA_BASE_URL: str = "http://localhost:11434"
     OLLAMA_TIMEOUT: int = 120
     OLLAMA_MAX_RETRIES: int = 3
@@ -439,7 +439,7 @@ def validate_config() -> bool:
     """验证配置有效性"""
     errors = []
     
-    # 检查 Ollama 模型配置
+    # 检查 DashScope 模型配置
     for name, model_config in OLLAMA_MODELS.items():
         if not model_config.model_id:
             errors.append(f"模型 {name} 缺少 model_id")

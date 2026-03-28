@@ -39,20 +39,6 @@ services:
     networks:
       - news-aggregator-network
 
-  # Ollama for LLM processing
-  ollama:
-    image: ollama/ollama:latest
-    container_name: news-aggregator-ollama
-    volumes:
-      - ollama_data:/root/.ollama
-    ports:
-      - "11434:11434"
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:11434/api/tags"]
-      interval: 30s
-      timeout: 10s
-      retries: 5
-    networks:
       - news-aggregator-network
 
   # API Service
@@ -60,17 +46,8 @@ services:
     build: .
     container_name: news-aggregator-api
     environment:
-      DB_HOST: postgres
-      DB_PORT: 5432
-      DB_NAME: news_aggregator
-      DB_USER: postgres
-      DB_PASSWORD: postgres
-      REDIS_HOST: redis
-      REDIS_PORT: 6379
-      REDIS_DB: 0
-      OLLAMA_HOST: ollama
-      OLLAMA_PORT: 11434
-      API_HOST: 0.0.0.0
+      DASHSCOPE_API_KEY: ${DASHSCOPE_API_KEY}
+      DASHSCOPE_MODEL: ${DASHSCOPE_MODEL:-qwen-max}      API_HOST: 0.0.0.0
       API_PORT: 8000
       LOG_LEVEL: INFO
     ports:
@@ -104,9 +81,8 @@ services:
       REDIS_HOST: redis
       REDIS_PORT: 6379
       REDIS_DB: 0
-      OLLAMA_HOST: ollama
-      OLLAMA_PORT: 11434
-    depends_on:
+      DASHSCOPE_API_KEY: ${DASHSCOPE_API_KEY}
+      DASHSCOPE_MODEL: ${DASHSCOPE_MODEL:-qwen-max}    depends_on:
       postgres:
         condition: service_healthy
       redis:
@@ -135,9 +111,8 @@ services:
       REDIS_HOST: redis
       REDIS_PORT: 6379
       REDIS_DB: 0
-      OLLAMA_HOST: ollama
-      OLLAMA_PORT: 11434
-    depends_on:
+      DASHSCOPE_API_KEY: ${DASHSCOPE_API_KEY}
+      DASHSCOPE_MODEL: ${DASHSCOPE_MODEL:-qwen-max}    depends_on:
       postgres:
         condition: service_healthy
       redis:
@@ -169,7 +144,6 @@ services:
 volumes:
   postgres_data:
   redis_data:
-  ollama_data:
 
 networks:
   news-aggregator-network:

@@ -3,7 +3,7 @@
 """
 内容分类器模块
 
-使用qwen2.5:0.5b轻量模型进行:
+使用qwen-max轻量模型进行:
 - 内容分类（14个预设类别）
 - 重要性评估（5级评分）
 - 批量处理与缓存
@@ -31,7 +31,7 @@ from loguru import logger
 import os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from utils.ollama_client import OllamaClient, OllamaConfig, OllamaModel
+from utils.dashscope_client import DashScopeClient, get_dashscope_client, OllamaConfig, OllamaModel
 from config.settings import (
     ContentCategory, 
     ImportanceLevel, 

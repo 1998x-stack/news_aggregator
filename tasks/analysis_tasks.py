@@ -14,7 +14,7 @@ sys.path.insert(0, str(PROJECT_ROOT))
 
 from db.database import db_manager
 from db.models import Article
-from utils.ollama_client import OllamaClient
+from utils.dashscope_client import DashScopeClient, get_dashscope_client
 from utils.cache_manager import cache_manager
 
 
@@ -24,7 +24,7 @@ def analyze_sentiment(self, article_ids: List[str] = None):
     try:
         logger.info("Starting sentiment analysis...")
 
-        ollama_client = OllamaClient()
+        ollama_client = get_dashscope_client()
 
         with db_manager.get_session() as session:
             # Get articles to analyze
@@ -66,8 +66,8 @@ def analyze_sentiment(self, article_ids: List[str] = None):
                     """
 
                     # Get response from LLM
-                    response = ollama_client.generate(
-                        prompt=prompt, model="qwen3:4b", format="json"
+                    response = dashscope_client.generate(
+                        prompt=prompt, model="qwen-max", format="json"
                     )
 
                     # Parse response
@@ -112,7 +112,7 @@ def extract_entities(self, article_ids: List[str] = None):
     try:
         logger.info("Starting entity extraction...")
 
-        ollama_client = OllamaClient()
+        ollama_client = get_dashscope_client()
 
         with db_manager.get_session() as session:
             # Get articles to analyze
@@ -154,8 +154,8 @@ def extract_entities(self, article_ids: List[str] = None):
                     """
 
                     # Get response from LLM
-                    response = ollama_client.generate(
-                        prompt=prompt, model="qwen3:4b", format="json"
+                    response = dashscope_client.generate(
+                        prompt=prompt, model="qwen-max", format="json"
                     )
 
                     # Parse response
@@ -199,7 +199,7 @@ def extract_keywords(self, article_ids: List[str] = None):
     try:
         logger.info("Starting keyword extraction...")
 
-        ollama_client = OllamaClient()
+        ollama_client = get_dashscope_client()
 
         with db_manager.get_session() as session:
             # Get articles to analyze
@@ -241,8 +241,8 @@ def extract_keywords(self, article_ids: List[str] = None):
                     """
 
                     # Get response from LLM
-                    response = ollama_client.generate(
-                        prompt=prompt, model="qwen2.5:0.5b", format="json"
+                    response = dashscope_client.generate(
+                        prompt=prompt, model="qwen-max", format="json"
                     )
 
                     # Parse response

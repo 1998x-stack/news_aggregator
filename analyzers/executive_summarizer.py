@@ -11,7 +11,7 @@ from dataclasses import dataclass
 PROJECT_ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
-from utils.ollama_client import OllamaClient
+from utils.dashscope_client import DashScopeClient, get_dashscope_client
 from analyzers.trend_analyzer import TrendReport
 from loguru import logger
 
@@ -31,7 +31,7 @@ class ExecutiveSummarizer:
     """Generate executive summaries using LLM"""
 
     def __init__(self):
-        self.ollama_client = OllamaClient()
+        self.ollama_client = get_dashscope_client()
 
     def generate_summary(
         self, trend_report: TrendReport, articles: List[Dict[str, Any]], date: str
@@ -45,8 +45,8 @@ class ExecutiveSummarizer:
             prompt = self._create_executive_summary_prompt(context)
 
             # Get response from LLM
-            response = self.ollama_client.generate(
-                prompt=prompt, model="qwen3:4b", format="json", temperature=0.3
+            response = self.dashscope_client.generate(
+                prompt=prompt, model="qwen-max", format="json", temperature=0.3
             )
 
             # Parse response

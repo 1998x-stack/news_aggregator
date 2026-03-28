@@ -2,16 +2,7 @@
 # -*- coding: utf-8 -*-
 """工具模块"""
 
-from .ollama_client import (
-    OllamaClient,
-    OllamaConfig,
-    OllamaResponse,
-    GenerationResult,
-    OllamaModel,
-    check_ollama_available,
-    create_ollama_client,
-    get_default_client
-)
+from .dashscope_client import DashScopeClient, get_dashscope_client
 from .file_utils import (
     FileManager,
     FileNameConfig,
@@ -24,19 +15,13 @@ from .file_utils import (
     load_json,
     ensure_dir,
     get_file_hash,
-    safe_filename
+    safe_filename,
 )
 
 __all__ = [
-    # Ollama
-    "OllamaClient",
-    "OllamaConfig",
-    "OllamaResponse",
-    "GenerationResult",
-    "OllamaModel",
-    "check_ollama_available",
-    "create_ollama_client",
-    "get_default_client",
+    # DashScope
+    "DashScopeClient",
+    "get_dashscope_client",
     # File Utils
     "FileManager",
     "FileNameConfig",
@@ -49,5 +34,5 @@ __all__ = [
     "load_json",
     "ensure_dir",
     "get_file_hash",
-    "safe_filename"
+    "safe_filename",
 ]

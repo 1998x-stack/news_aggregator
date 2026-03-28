@@ -27,7 +27,7 @@ from loguru import logger
 # 添加项目根目录到路径
 sys.path.insert(0, 'news_aggregator')
 
-from utils.ollama_client import OllamaClient, OllamaConfig
+from utils.dashscope_client import DashScopeClient, get_dashscope_client, OllamaConfig
 from prompts.llm_prompts import get_prompt, PromptType
 from config.settings import LLMSettings, ContentCategory
 

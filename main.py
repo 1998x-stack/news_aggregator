@@ -53,7 +53,7 @@ from analyzers.trend_analyzer import TrendAnalyzer, create_trend_analyzer
 from analyzers.report_generator import ReportGenerator, ReportConfig, create_report_generator
 
 # 工具
-from utils.ollama_client import OllamaClient, check_ollama_available
+from utils.dashscope_client import DashScopeClient, get_dashscope_client
 from utils.file_utils import save_json, load_json, ensure_dir
 
 
@@ -377,9 +377,9 @@ class NewsAggregatorPipeline:
         logger.info("开始分类标注阶段")
         logger.info("=" * 50)
         
-        # 检查Ollama是否可用
-        if not check_ollama_available():
-            logger.warning("Ollama不可用，使用规则分类")
+        # 检查DashScope是否可用
+        if not get_dashscope_client().check_health():
+            logger.warning("DashScope不可用，使用规则分类")
             return self._rule_based_classify(items)
         
         classifier = self._get_classifier()
@@ -457,9 +457,9 @@ class NewsAggregatorPipeline:
         logger.info("开始信息抽取阶段")
         logger.info("=" * 50)
         
-        # 检查Ollama是否可用
-        if not check_ollama_available():
-            logger.warning("Ollama不可用，跳过LLM信息抽取")
+        # 检查DashScope是否可用
+        if not get_dashscope_client().check_health():
+            logger.warning("DashScope不可用，跳过LLM信息抽取")
             return items
         
         extractor = self._get_info_extractor()

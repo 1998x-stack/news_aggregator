@@ -48,7 +48,7 @@
 │   └── llm_prompts.py
 ├── utils/                  # 工具模块
 │   ├── __init__.py
-│   ├── ollama_client.py    # Ollama客户端
+│   ├── dashscope_client.py   # DashScope客户端
 │   └── file_utils.py       # 文件工具
 ├── reports/                # API研究文档
 ├── outputs/                # 生成的报告
@@ -64,12 +64,10 @@
 # 安装依赖
 pip install -r requirements.txt
 
-# 安装Ollama (可选，用于LLM分析)
-curl -fsSL https://ollama.com/install.sh | sh
-
-# 拉取模型
-ollama pull qwen2.5:0.5b  # 分类模型
-ollama pull qwen3:4b    # 抽取模型
+# 配置DashScope API Key (用于LLM分析)
+export DASHSCOPE_API_KEY="your-dashscope-api-key"
+# 可选：指定模型 (默认: qwen-max)
+export DASHSCOPE_MODEL="qwen-max"
 ```
 
 ### 2. 运行系统
@@ -223,7 +221,7 @@ class LLMSettings:
 
 ## 注意事项
 
-1. **Ollama服务**: LLM分析需要运行Ollama服务
+1. **DashScope API Key**: LLM分析需要配置DashScope API Key
 2. **网络访问**: 数据采集需要访问外部API
 3. **存储空间**: 缓存和日志会占用磁盘空间
 4. **API限制**: 部分源可能有速率限制
