@@ -13,4 +13,4 @@
 - Risk & rollback: Low source change, but incomplete integration validation. Keep as Draft PR; do not auto-merge until existing regression suite, CI, branch protection/review rules and real database/Redis checks are verified. Roll back by closing Draft PR, or reverting source commit on its feature branch.
 - Follow-up: In a fully provisioned local/CI environment, run existing pytest suite plus FastAPI TestClient checks against a disposable PostgreSQL/Redis service, then review PR. Separately fix the async cache decorator with an integration test.
 - Commit: 7922fcb5556513e127352ad83a5f6a8c1a4946c3 (source); 99cfa6580ca024bda18ac965704d3aaac30b96f3 (tests).
-- PR: pending
+- PR: https://github.com/1998x-stack/news_aggregator/pull/1 (Draft; merge blocked by incomplete integration/CI validation).
