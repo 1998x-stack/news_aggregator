@@ -3,6 +3,7 @@ Health check endpoints
 """
 
 from fastapi import APIRouter, Depends
+from sqlalchemy import text
 from sqlalchemy.orm import Session
 from db.database import get_db
 from utils.cache_manager import cache_manager
@@ -33,7 +34,7 @@ async def health_check_details(db: Session = Depends(get_db)):
 
     # Check database
     try:
-        db.execute("SELECT 1")
+        db.execute(text("SELECT 1"))
         health_status["dependencies"]["database"] = {
             "status": "healthy",
             "message": "Database connection OK",
@@ -67,7 +68,7 @@ async def readiness_check(db: Session = Depends(get_db)):
     """Readiness check for Kubernetes"""
     try:
         # Check database
-        db.execute("SELECT 1")
+        db.execute(text("SELECT 1"))
 
         # Check Redis
         cache_manager.redis_client.ping()
